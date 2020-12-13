@@ -1,21 +1,50 @@
-import React from "react";
-import Link from "next/link";
-import Head from "../components/head";
-import Nav from "../components/nav";
+import React, { FC } from "react";
 
-import { fetchEntries, fetchEntry } from "../util/contentfulPosts";
+import PageWrapper from "../components/wrappers/pageWrapper/PageWrapper";
 
-const Home = ({ data }) => (
-  <div>
+import { fetchEntry } from "../util/contentfulPosts";
+
+interface HomeProps {
+  data: {
+    title: string;
+    hero: {
+      sys: {
+        space: { sys: { type: string; linkType: string; id: string } };
+        id: "3URHfBqXqwnnEciSZHwo9Z";
+        type: string;
+        createdAt: string;
+        updatedAt: string;
+        environment: {
+          sys: { id: string; type: string; linkType: string };
+        };
+        revision: number;
+        contentType: {
+          sys: { type: string; linkType: string; id: string };
+        };
+        locale: string;
+      };
+      fields: { title: string };
+    };
+    event: {
+      labelText: string;
+      title: string;
+      description: {};
+      image: {};
+      date: string;
+      location: {};
+      buttonText: string;
+    };
+  };
+}
+
+const Home: FC<HomeProps> = ({ data }) => (
+  <PageWrapper>
     <h1>{data.title}</h1>
-    <Head title={`${data.title} | State of Nature`} />
-    <Nav />
-  </div>
+  </PageWrapper>
 );
 
 export async function getStaticProps() {
   const data = await fetchEntry("6po8NvulhuXrjxMaKp5jIh");
-
   return {
     props: {
       data: data.fields,
