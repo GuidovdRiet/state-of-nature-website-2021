@@ -2,10 +2,11 @@ import { ThemeProvider } from "@emotion/react";
 import { FC, ReactNode } from "react";
 
 interface PageWrapperProps {
+  head: ReactNode;
   children: ReactNode;
 }
 
-const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
+const PageWrapper: FC<PageWrapperProps> = ({ children, head }) => {
   const theme = {
     colors: {
       primaryOrange: "#F5764B",
@@ -26,7 +27,12 @@ const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
     },
   };
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      {head}
+      {children}
+    </ThemeProvider>
+  );
 };
 
 export default PageWrapper;
