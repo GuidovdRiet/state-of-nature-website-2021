@@ -4,7 +4,7 @@ import Hero from "../components/hero/Hero";
 
 import PageWrapper from "../components/wrappers/pageWrapper/PageWrapper";
 
-import { fetchEntry } from "../util/contentfulPosts";
+import { fetchContentType, fetchEntry } from "../util/contentfulPosts";
 
 interface HomeProps {
   data: {
@@ -40,7 +40,6 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({ data: { title, hero, event } }) => {
-  console.log(hero);
   return (
     <PageWrapper head={<Head title={title} />}>
       {hero && (
@@ -54,6 +53,8 @@ const Home: FC<HomeProps> = ({ data: { title, hero, event } }) => {
 
 export async function getStaticProps() {
   const data = await fetchEntry("6po8NvulhuXrjxMaKp5jIh");
+  const events = await fetchContentType("event");
+
   return {
     props: {
       data: data.fields,
