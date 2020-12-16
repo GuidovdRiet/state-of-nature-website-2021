@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import Head from "../components/head";
+import Hero from "../components/hero/Hero";
 
 import PageWrapper from "../components/wrappers/pageWrapper/PageWrapper";
 
@@ -37,11 +39,18 @@ interface HomeProps {
   };
 }
 
-const Home: FC<HomeProps> = ({ data }) => (
-  <PageWrapper>
-    <h1>{data.title}</h1>
-  </PageWrapper>
-);
+const Home: FC<HomeProps> = ({ data: { title, hero, event } }) => {
+  console.log(hero);
+  return (
+    <PageWrapper head={<Head title={title} />}>
+      {hero && (
+        <Hero>
+          <h1>{hero.fields.title}</h1>
+        </Hero>
+      )}
+    </PageWrapper>
+  );
+};
 
 export async function getStaticProps() {
   const data = await fetchEntry("6po8NvulhuXrjxMaKp5jIh");

@@ -8,9 +8,9 @@ const defaultOGImage = "/OG/SON-OG-default-image.jpg";
 
 interface HeadProps {
   title: string;
-  description: string;
-  url: string;
-  ogImage: string;
+  description?: string;
+  url?: string;
+  ogImage?: string;
 }
 
 const Head: FC<HeadProps> = ({ title, url, description, ogImage }) => (
