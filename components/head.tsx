@@ -1,10 +1,10 @@
-import React, { FC } from "react";
-import NextHead from "next/head";
+import React, { FC } from 'react';
+import NextHead from 'next/head';
 
 const defaultDescription =
   "Connect to your very own 'State of Nature' and free your mind of obligations. Giving you a taste of Nature’s best tunes and flavors.";
-const defaultOGURL = "https://ourstateofnature.com/";
-const defaultOGImage = "/OG/SON-OG-default-image.jpg";
+const defaultOGURL = 'https://ourstateofnature.com/';
+const defaultOGImage = '/OG/SON-OG-default-image.jpg';
 
 interface HeadProps {
   title: string;
@@ -16,7 +16,7 @@ interface HeadProps {
 const Head: FC<HeadProps> = ({ title, url, description, ogImage }) => (
   <NextHead>
     <meta charSet="UTF-8" />
-    <title>{title || ""}</title>
+    <title>{title || ''}</title>
     <meta name="description" content={description || defaultDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
@@ -24,7 +24,7 @@ const Head: FC<HeadProps> = ({ title, url, description, ogImage }) => (
     <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
     <link rel="icon" href="/static/favicon.ico" />
     <meta property="og:url" content={url || defaultOGURL} />
-    <meta property="og:title" content={title || ""} />
+    <meta property="og:title" content={title || ''} />
     <meta
       property="og:description"
       content={description || defaultDescription}
