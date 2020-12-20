@@ -1,4 +1,4 @@
-import Logo from "../media/Logo";
+import Logo from '../media/Logo';
 
 export default function Navigation() {
   return (
