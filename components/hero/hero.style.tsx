@@ -5,4 +5,8 @@ export const Hero = styled.section`
     text-align: center;
     font-size: 10.2em;
   }
+
+  .hero__text span {
+    color: ${({ theme }) => theme.colors.primaryYellow};
+  }
 `;

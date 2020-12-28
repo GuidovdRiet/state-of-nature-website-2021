@@ -15,7 +15,12 @@ interface HeroProps {
 const Hero: FC<HeroProps> = ({ text }) => (
   <SectionWrapper>
     <S.Hero>
-      <h1 className="hero__text">{text.map(({ value, marks }) => value)}</h1>
+      <h1 className="hero__text">
+        {text.map(({ value, marks }) => {
+          const [isBold] = marks.map((mark) => mark?.type === 'bold');
+          return isBold ? <span>{value}</span> : value;
+        })}
+      </h1>
       <IconButton icon={<ShortArrowDown />} />
     </S.Hero>
   </SectionWrapper>

@@ -16,6 +16,20 @@ export const Navigation = styled.nav`
     font-size: 1.38em;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.grey200};
+    transition: background-color 0.1s ease-in;
+    transition: border 0.1s ease-in;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  }
+
+  .navigation__nav-items-list > li:hover {
+    background-color: #fffdef;
+    border: 1px solid #e0d4c2;
+  }
+
+  .navigation__nav-items-list > li > a {
+    padding: 7px 8px;
+    display: block;
   }
 
   .navigation__right-content-wrapper {
