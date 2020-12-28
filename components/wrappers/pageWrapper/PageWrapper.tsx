@@ -2,7 +2,7 @@ import { ThemeProvider } from '@emotion/react';
 import React, { FC, ReactElement, ReactNode } from 'react';
 
 // Types
-import { NavigationProps } from '../../navigation/Navigation';
+import { NavigationProps } from '../../navigation/desktopNavigation/DesktopNavigation';
 
 // Style
 import GlobalStyles from '../../../style/GlobalStyle';

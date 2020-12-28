@@ -10,7 +10,7 @@ import PageWrapper from '../components/wrappers/pageWrapper/PageWrapper';
 // Types
 import { EventType } from '../types/EventType';
 import { HeroSectionType } from '../types/sectionTypes/HeroSectionType';
-import Navigation from '../components/navigation/Navigation';
+import Navigation from '../components/navigation/desktopNavigation/DesktopNavigation';
 
 interface HomeProps {
   data: {
@@ -37,11 +37,7 @@ const Home: FC<HomeProps> = ({
       />
     }
   >
-    {hero && (
-      <Hero>
-        <h1>{hero.fields.title}</h1>
-      </Hero>
-    )}
+    {hero && <Hero text={hero.fields.heroText.content[0].content} />}
   </PageWrapper>
 );
 

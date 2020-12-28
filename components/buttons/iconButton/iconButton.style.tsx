@@ -1,3 +1,4 @@
+import { SVGProps } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
@@ -29,6 +30,7 @@ const sizeVariants = () => ({
 interface IconButtonProps {
   size?: 'small' | 'normal' | 'large';
   variant?: 'default' | 'borderless' | 'primary';
+  icon: SVGProps<SVGSVGElement>;
 }
 
 export const IconButton = styled.button<IconButtonProps>`

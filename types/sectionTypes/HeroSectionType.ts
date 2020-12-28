@@ -14,5 +14,12 @@ export interface HeroSectionType {
     };
     locale: string;
   };
-  fields: { title: string };
+  fields: {
+    heroText: {
+      content: {
+        content: { value: string; marks: { type: 'bold' }[] | [] }[];
+      }[];
+    };
+    title: string;
+  };
 }

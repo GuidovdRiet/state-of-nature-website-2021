@@ -13,7 +13,7 @@ export const Navigation = styled.nav`
 
   .navigation__nav-items-list > li {
     margin: 0 15px;
-    font-size: 1.3em;
+    font-size: 1.38em;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.grey200};
   }
@@ -26,13 +26,15 @@ export const Navigation = styled.nav`
   .navigation__social-wrapper {
     display: flex;
     justify-content: center;
+    margin-right: 26px;
   }
 
   .navigation__social-icon-instagram {
-    width: 26px;
+    width: 28px;
   }
 
   .navigation__social-icon-facebook {
-    width: 12px;
+    width: 13px;
+    margin-right: 15px;
   }
 `;

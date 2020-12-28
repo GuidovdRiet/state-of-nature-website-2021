@@ -76,7 +76,6 @@ const GlobalStyle = () => {
         }
 
         a {
-          color: ${theme.colors.black};
           text-decoration: none;
           cursor: pointer;
         }

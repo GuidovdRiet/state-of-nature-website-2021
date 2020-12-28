@@ -4,7 +4,9 @@ import styled from '@emotion/styled';
 import { Theme, css } from '@emotion/react';
 
 export const colorVariants = (theme: Theme) => ({
-  primaryOrange: css``,
+  primaryOrange: css`
+    background-color: ${theme.colors.primaryOrange};
+  `,
   primaryGreen: css``,
 });
 
@@ -17,15 +19,15 @@ const sizeVariants = () => ({
     }
   `,
   normal: css`
-    font-size: 1em;
-    padding: 9px 25px;
+    font-size: 2.2em;
+    padding: 7px 21px;
     svg {
       width: 16px;
     }
   `,
   large: css`
     font-size: 1.4em;
-    padding: 15px 30px;
+    padding: 30px 45px;
     svg {
       width: 19px;
     }
@@ -34,7 +36,7 @@ const sizeVariants = () => ({
 
 interface ButtonProps {
   size?: 'small' | 'normal' | 'large';
-  variant?: 'default' | 'borderless' | 'primary';
+  variant?: 'primaryOrange' | 'primaryGreen';
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -45,7 +47,12 @@ export const Button = styled.button<ButtonProps>`
   transition: transform 0.1s ease;
   display: flex;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 3px;
+  border: 0;
+  color: ${({ theme }) => theme.colors.white};
+  font-family: 'Londrina Solid';
+  font-weight: 300;
+  ${({ theme }) => theme.helpers.fontSmoothing};
 
   /* Color variants */
   ${({ theme }) =>

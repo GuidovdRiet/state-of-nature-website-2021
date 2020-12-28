@@ -7,10 +7,8 @@ import * as S from './button.style';
 export interface ButtonProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
-  dataTestId?: string;
-  disabled?: boolean;
   size?: 'small' | 'normal' | 'large';
-  variant?: 'default' | 'borderless' | 'primary';
+  variant?: 'primaryOrange' | 'primaryGreen';
   text: string;
   icon?: SVGProps<SVGSVGElement>;
 }
@@ -18,21 +16,12 @@ export interface ButtonProps {
 export const Button: FC<ButtonProps> = ({
   type = 'button',
   onClick,
-  dataTestId = 'button',
-  variant = 'default',
-  disabled = false,
+  variant = 'primaryOrange',
   size = 'normal',
   text = 'Read more',
   icon,
 }) => (
-  <S.Button
-    onClick={onClick}
-    variant={variant}
-    size={size}
-    type={type}
-    disabled={disabled}
-    data-testid={dataTestId}
-  >
+  <S.Button onClick={onClick} variant={variant} size={size} type={type}>
     {icon && icon}
     {text}
   </S.Button>

@@ -1,4 +1,4 @@
-import { Theme } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
 const theme: Theme = {
   colors: {
@@ -19,6 +19,12 @@ const theme: Theme = {
     red500: '#D93403',
 
     purple300: '#383478',
+  },
+  helpers: {
+    fontSmoothing: `
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    `,
   },
 };
 

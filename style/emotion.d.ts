@@ -19,5 +19,8 @@ declare module '@emotion/react' {
       red500: string;
       purple300: string;
     };
+    helpers: {
+      fontSmoothing: string;
+    };
   }
 }
