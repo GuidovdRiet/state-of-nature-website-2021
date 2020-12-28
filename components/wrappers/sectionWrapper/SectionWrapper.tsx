@@ -1,14 +1,14 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode } from 'react';
 
 // Style
-import * as S from "./sectionWrapper.style";
+import * as S from './sectionWrapper.style';
 
 interface SectionWrapperProps {
   children: ReactNode;
 }
 
-const SectionWrapper: FC<SectionWrapperProps> = ({ children }) => {
-  return <S.Wrapper>{children}</S.Wrapper>;
-};
+const SectionWrapper: FC<SectionWrapperProps> = ({ children }) => (
+  <S.Wrapper>{children}</S.Wrapper>
+);
 
 export default SectionWrapper;

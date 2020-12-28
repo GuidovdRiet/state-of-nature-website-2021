@@ -18,17 +18,24 @@ interface HomeProps {
     hero: HeroSectionType;
   };
   events: EventType[];
+  navigationData: any;
   upcomingEvent: EventType | undefined;
 }
 
 const Home: FC<HomeProps> = ({
   data: { title, hero },
   events,
+  navigationData,
   upcomingEvent,
 }) => (
   <PageWrapper
-    navigation={<Navigation upcomingEvent={upcomingEvent} />}
     head={<Head title={title} />}
+    navigation={
+      <Navigation
+        upcomingEvent={upcomingEvent}
+        navigationData={navigationData}
+      />
+    }
   >
     {hero && (
       <Hero>
@@ -41,8 +48,8 @@ const Home: FC<HomeProps> = ({
 export async function getStaticProps() {
   const data = await fetchEntry('6po8NvulhuXrjxMaKp5jIh');
   const events = await fetchContentType('event');
-  const navigation = await fetchContentType('20WVzXIkln64XWMt29wnZS');
-  let upcomingEvent = null;
+  const navigationData = await fetchEntry('20WVzXIkln64XWMt29wnZS');
+  let upcomingEvent;
 
   // Check if there are is an upcoming event
   if (events.items.length) {
@@ -55,7 +62,7 @@ export async function getStaticProps() {
     props: {
       data: data.fields,
       events: events.items,
-      navigation,
+      navigationData,
       upcomingEvent: upcomingEvent || null,
     },
   };

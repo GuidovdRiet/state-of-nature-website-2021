@@ -1,8 +1,8 @@
-import React from "react";
-import normalize from "emotion-normalize";
+import React from 'react';
+import normalize from 'emotion-normalize';
 
 // Font Faces
-import { css, Global, useTheme } from "@emotion/react";
+import { css, Global, useTheme } from '@emotion/react';
 
 const GlobalStyle = () => {
   const theme = useTheme();
@@ -16,10 +16,11 @@ const GlobalStyle = () => {
           padding: 0;
           word-wrap: break-word;
           position: relative;
+          background-color: #fbfaef;
         }
 
         html {
-          font-family: "Source Sans Pro", sans-serif;
+          font-family: 'Source Sans Pro', sans-serif;
           font-size: 13px;
         }
 
@@ -44,12 +45,12 @@ const GlobalStyle = () => {
 
         h1,
         h2 {
-          font-family: "Londrina Solid", sans-serif;
+          font-family: 'Londrina Solid', sans-serif;
           font-weight: 900;
         }
 
         h3 {
-          font-family: "Londrina Solid", sans-serif;
+          font-family: 'Londrina Solid', sans-serif;
           font-weight: 400;
         }
 
