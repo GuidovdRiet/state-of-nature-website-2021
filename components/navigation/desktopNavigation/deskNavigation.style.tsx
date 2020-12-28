@@ -12,10 +12,13 @@ export const Navigation = styled.nav`
   .navigation__nav-items-list {
     display: flex;
     list-style: none;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
   }
 
   .navigation__nav-items-list > li {
-    margin: 0 15px;
+    margin: 0 18px;
     font-size: 1.4em;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.grey200};

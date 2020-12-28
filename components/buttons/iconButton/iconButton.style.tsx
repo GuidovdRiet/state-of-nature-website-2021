@@ -34,12 +34,21 @@ interface IconButtonProps {
 
 export const IconButton = styled.button<IconButtonProps>`
   cursor: pointer;
-  transition: transform 0.1s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0px;
   border-radius: 3px;
+  transform: translate3d(0px, 0px 0px);
+
+  &:hover {
+    transform: translate3d(0px, 3px, 0px);
+    box-shadow: none;
+  }
+
+  &:active {
+    outline: 0;
+  }
 
   /* Size variants */
   ${variant({

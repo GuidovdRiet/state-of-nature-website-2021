@@ -6,9 +6,11 @@ import { Theme, css } from '@emotion/react';
 export const colorVariants = (theme: Theme) => ({
   primaryOrange: css`
     background-color: ${theme.colors.primaryOrange};
+    box-shadow: 0 3px 0 0 ${darken(0.18, theme.colors.primaryOrange)};
   `,
   primaryGreen: css`
     background-color: ${theme.colors.primaryGreen};
+    box-shadow: 0 3px 0 0 ${darken(0.13, theme.colors.primaryGreen)};
   `,
 });
 
@@ -46,7 +48,6 @@ export const Button = styled.button<ButtonProps>`
   font-weight: 600;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.1s ease;
   display: flex;
   align-items: center;
   border-radius: 3px;
@@ -55,6 +56,13 @@ export const Button = styled.button<ButtonProps>`
   font-family: 'Londrina Solid';
   font-weight: 300;
   ${({ theme }) => theme.helpers.fontSmoothing};
+  position: relative;
+  transform: translate3d(0px, 0px 0px);
+
+  &:hover {
+    transform: translate3d(0px, 3px, 0px);
+    box-shadow: none;
+  }
 
   /* Color variants */
   ${({ theme }) =>
