@@ -5,6 +5,9 @@ export const Navigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1283px;
+  padding: 0 30px;
+  margin: 30px auto 0 auto;
 
   .navigation__nav-items-list {
     display: flex;
@@ -13,7 +16,7 @@ export const Navigation = styled.nav`
 
   .navigation__nav-items-list > li {
     margin: 0 15px;
-    font-size: 1.38em;
+    font-size: 1.4em;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.grey200};
     transition: background-color 0.1s ease-in;

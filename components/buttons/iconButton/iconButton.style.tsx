@@ -19,16 +19,17 @@ const sizeVariants = () => ({
   `,
   large: css`
     font-size: 1.4em;
-    padding: 15px;
+    width: 65px;
+    height: 65px;
     svg {
-      width: 19px;
+      width: 25px;
     }
   `,
 });
 
 interface IconButtonProps {
   size?: 'small' | 'normal' | 'large';
-  variant?: 'default' | 'borderless' | 'primary';
+  variant?: 'primaryOrange' | 'primaryGreen';
 }
 
 export const IconButton = styled.button<IconButtonProps>`
@@ -36,7 +37,9 @@ export const IconButton = styled.button<IconButtonProps>`
   transition: transform 0.1s ease;
   display: flex;
   align-items: center;
-  border-radius: 5px;
+  justify-content: center;
+  border: 0px;
+  border-radius: 3px;
 
   /* Size variants */
   ${variant({

@@ -7,7 +7,9 @@ export const colorVariants = (theme: Theme) => ({
   primaryOrange: css`
     background-color: ${theme.colors.primaryOrange};
   `,
-  primaryGreen: css``,
+  primaryGreen: css`
+    background-color: ${theme.colors.primaryGreen};
+  `,
 });
 
 const sizeVariants = () => ({

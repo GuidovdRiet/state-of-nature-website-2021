@@ -10,7 +10,7 @@ export interface IconButtonProps {
   dataTestId?: string;
   disabled?: boolean;
   size?: 'small' | 'normal' | 'large';
-  variant?: 'default' | 'primary';
+  variant?: 'primaryGreen' | 'primaryOrange';
   icon: React.SVGProps<SVGSVGElement>;
 }
 
@@ -18,7 +18,7 @@ export const IconButton: FC<IconButtonProps> = ({
   type = 'button',
   onClick,
   dataTestId = 'button',
-  variant = 'default',
+  variant = 'primaryGreen',
   disabled = false,
   size = 'normal',
   icon,

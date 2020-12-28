@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.section`
   max-width: 1283px;
   padding: 0 30px;
   margin: 0 auto;

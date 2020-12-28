@@ -41,51 +41,49 @@ export interface NavigationProps {
 }
 
 const Navigation: FC<NavigationProps> = ({ upcomingEvent, navigationData }) => (
-  <SectionWrapper>
-    <S.Navigation>
-      <img
-        src={navigationData.fields.logo.fields.file.url}
-        alt="State of Nature logo"
-      />
-      <ul className="navigation__nav-items-list">
-        <li>
-          <a>Events</a>
-        </li>
-        <li>
-          <a>Visie</a>
-        </li>
-        <li>
-          <a>Partners</a>
-        </li>
-        <li>
-          <a>Contact</a>
-        </li>
-      </ul>
-      <div className="navigation__right-content-wrapper">
-        <div className="navigation__social-wrapper">
-          <a
-            href="https://www.facebook.com/ourstateofnature"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FacebookIcon className="navigation__social-icon-facebook" />
-          </a>
-          <a
-            href="https://www.instagram.com/ourstateofnature"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <InstagramIcon className="navigation__social-icon-instagram" />
-          </a>
-        </div>
-        {upcomingEvent ? (
-          <Button type="button" text="Tickets" />
-        ) : (
-          <Button type="button" text="Newsletter" />
-        )}
+  <S.Navigation>
+    <img
+      src={navigationData.fields.logo.fields.file.url}
+      alt="State of Nature logo"
+    />
+    <ul className="navigation__nav-items-list">
+      <li>
+        <a>Events</a>
+      </li>
+      <li>
+        <a>Visie</a>
+      </li>
+      <li>
+        <a>Partners</a>
+      </li>
+      <li>
+        <a>Contact</a>
+      </li>
+    </ul>
+    <div className="navigation__right-content-wrapper">
+      <div className="navigation__social-wrapper">
+        <a
+          href="https://www.facebook.com/ourstateofnature"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FacebookIcon className="navigation__social-icon-facebook" />
+        </a>
+        <a
+          href="https://www.instagram.com/ourstateofnature"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <InstagramIcon className="navigation__social-icon-instagram" />
+        </a>
       </div>
-    </S.Navigation>
-  </SectionWrapper>
+      {upcomingEvent ? (
+        <Button type="button" text="Tickets" />
+      ) : (
+        <Button type="button" text="Newsletter" />
+      )}
+    </div>
+  </S.Navigation>
 );
 
 export default Navigation;

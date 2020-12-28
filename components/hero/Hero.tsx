@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { IconButton } from '../buttons/iconButton/iconButton.style';
+import IconButton from '../buttons/iconButton/IconButton';
 import SectionWrapper from '../wrappers/sectionWrapper/SectionWrapper';
 
 // Components
@@ -21,7 +21,11 @@ const Hero: FC<HeroProps> = ({ text }) => (
           return isBold ? <span>{value}</span> : value;
         })}
       </h1>
-      <IconButton icon={<ShortArrowDown />} />
+      <IconButton
+        variant="primaryGreen"
+        size="large"
+        icon={<ShortArrowDown />}
+      />
     </S.Hero>
   </SectionWrapper>
 );
