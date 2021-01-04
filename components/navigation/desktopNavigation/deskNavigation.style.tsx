@@ -4,7 +4,7 @@ export const Navigation = styled.nav`
   margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   max-width: 1283px;
   padding: 0 30px;
   margin: 30px auto 0 auto;
@@ -15,12 +15,13 @@ export const Navigation = styled.nav`
     padding: 0;
     flex: 1;
     justify-content: center;
+    margin-left: 42px;
   }
 
   .navigation__nav-items-list > li {
-    margin: 0 18px;
-    font-size: 1.4em;
-    font-weight: 600;
+    margin: 0 25px;
+    font-size: 1.42em;
+    font-weight: 400;
     color: ${({ theme }) => theme.colors.grey200};
     transition: background-color 0.1s ease-in;
     transition: border 0.1s ease-in;
@@ -34,7 +35,7 @@ export const Navigation = styled.nav`
   }
 
   .navigation__nav-items-list > li > a {
-    padding: 7px 8px;
+    padding: 7px 10px;
     display: block;
   }
 

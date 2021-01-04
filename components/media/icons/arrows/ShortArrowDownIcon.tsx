@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function ShortArrowDown(props: React.SVGProps<SVGSVGElement>) {
+function ShortArrowDownIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 27 27" {...props}>
       <g stroke="#FFF" strokeWidth={3.475} fill="none" fillRule="evenodd">
@@ -11,5 +11,5 @@ function ShortArrowDown(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const MemoShortArrowDown = React.memo(ShortArrowDown);
-export default MemoShortArrowDown;
+const MemoShortArrowDownIcon = React.memo(ShortArrowDownIcon);
+export default MemoShortArrowDownIcon;

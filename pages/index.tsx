@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
-import { isFuture } from 'date-fns';
-
+import { compareDesc, isFuture } from 'date-fns';
 import { fetchContentType, fetchEntry } from '../util/contentfulPosts';
+
 // Components
 import Head from '../components/head';
 import Hero from '../components/hero/Hero';
 import PageWrapper from '../components/wrappers/pageWrapper/PageWrapper';
+import EventHighlightSection from '../components/sections/eventHighlightSection/EventHighlightSection';
 
 // Types
 import { EventType } from '../types/EventType';
@@ -38,6 +39,7 @@ const Home: FC<HomeProps> = ({
     }
   >
     {hero && <Hero text={hero.fields.heroText.content[0].content} />}
+    {<EventHighlightSection event={upcomingEvent || events[0]} />}
   </PageWrapper>
 );
 
@@ -54,10 +56,15 @@ export async function getStaticProps() {
     );
   }
 
+  const sortedEvents = events.items.sort(
+    (eventA: EventType, eventB: EventType) =>
+      compareDesc(new Date(eventA.fields.date), new Date(eventB.fields.date))
+  );
+
   return {
     props: {
       data: data.fields,
-      events: events.items,
+      events: sortedEvents,
       navigationData,
       upcomingEvent: upcomingEvent || null,
     },

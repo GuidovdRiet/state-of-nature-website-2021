@@ -2,11 +2,15 @@ import { darken } from 'polished';
 import { variant } from 'styled-system';
 import styled from '@emotion/styled';
 import { Theme, css } from '@emotion/react';
+import { motion } from 'framer-motion';
 
 export const colorVariants = (theme: Theme) => ({
   primaryOrange: css`
     background-color: ${theme.colors.primaryOrange};
     box-shadow: 0 3px 0 0 ${darken(0.18, theme.colors.primaryOrange)};
+    &:hover {
+      background-color: ${darken(0.025, theme.colors.primaryOrange)};
+    }
   `,
   primaryGreen: css`
     background-color: ${theme.colors.primaryGreen};
@@ -43,7 +47,7 @@ interface ButtonProps {
   variant?: 'primaryOrange' | 'primaryGreen';
 }
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled(motion.button)<ButtonProps>`
   text-decoration: none;
   font-weight: 600;
   text-align: center;
@@ -60,8 +64,7 @@ export const Button = styled.button<ButtonProps>`
   transform: translate3d(0px, 0px 0px);
 
   &:hover {
-    transform: translate3d(0px, 3px, 0px);
-    box-shadow: none;
+    background-color: ;
   }
 
   /* Color variants */

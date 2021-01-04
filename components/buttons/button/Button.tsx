@@ -21,7 +21,15 @@ export const Button: FC<ButtonProps> = ({
   text = 'Read more',
   icon,
 }) => (
-  <S.Button onClick={onClick} variant={variant} size={size} type={type}>
+  <S.Button
+    onClick={onClick}
+    variant={variant}
+    size={size}
+    type={type}
+    // Motion
+    whileTap={{ top: 2, boxShadow: 'none', scale: 0.98 }}
+    transition={{ duration: 0.01 }}
+  >
     {icon && icon}
     {text}
   </S.Button>
