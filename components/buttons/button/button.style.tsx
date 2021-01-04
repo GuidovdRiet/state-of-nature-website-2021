@@ -15,6 +15,9 @@ export const colorVariants = (theme: Theme) => ({
   primaryGreen: css`
     background-color: ${theme.colors.primaryGreen};
     box-shadow: 0 3px 0 0 ${darken(0.13, theme.colors.primaryGreen)};
+    &:hover {
+      background-color: ${darken(0.025, theme.colors.primaryGreen)};
+    }
   `,
 });
 
@@ -61,11 +64,6 @@ export const Button = styled(motion.button)<ButtonProps>`
   font-weight: 300;
   ${({ theme }) => theme.helpers.fontSmoothing};
   position: relative;
-  transform: translate3d(0px, 0px 0px);
-
-  &:hover {
-    background-color: ;
-  }
 
   /* Color variants */
   ${({ theme }) =>
@@ -81,9 +79,5 @@ export const Button = styled(motion.button)<ButtonProps>`
 
   &:focus {
     outline: 0;
-  }
-
-  svg {
-    margin-right: 5px;
   }
 `;

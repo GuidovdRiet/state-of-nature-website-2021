@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { variant } from 'styled-system';
 
 import { colorVariants } from '../button/button.style';
@@ -32,21 +33,16 @@ interface IconButtonProps {
   variant?: 'primaryOrange' | 'primaryGreen';
 }
 
-export const IconButton = styled.button<IconButtonProps>`
+export const IconButton = styled(motion.button)<IconButtonProps>`
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0px;
   border-radius: 3px;
-  transform: translate3d(0px, 0px 0px);
+  position: relative;
 
-  &:hover {
-    transform: translate3d(0px, 3px, 0px);
-    box-shadow: none;
-  }
-
-  &:active {
+  &:focus {
     outline: 0;
   }
 

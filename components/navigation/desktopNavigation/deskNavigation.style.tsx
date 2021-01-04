@@ -20,8 +20,8 @@ export const Navigation = styled.nav`
 
   .navigation__nav-items-list > li {
     margin: 0 25px;
-    font-size: 1.42em;
-    font-weight: 400;
+    font-size: 1.4em;
+    font-weight: 600;
     color: ${({ theme }) => theme.colors.grey200};
     transition: background-color 0.1s ease-in;
     transition: border 0.1s ease-in;

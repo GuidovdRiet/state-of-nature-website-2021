@@ -7,8 +7,6 @@ import * as S from './iconButton.style';
 export interface IconButtonProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
-  dataTestId?: string;
-  disabled?: boolean;
   size?: 'small' | 'normal' | 'large';
   variant?: 'primaryGreen' | 'primaryOrange';
   icon: React.SVGProps<SVGSVGElement>;
@@ -17,9 +15,7 @@ export interface IconButtonProps {
 export const IconButton: FC<IconButtonProps> = ({
   type = 'button',
   onClick,
-  dataTestId = 'button',
   variant = 'primaryGreen',
-  disabled = false,
   size = 'normal',
   icon,
 }) => (
@@ -28,8 +24,9 @@ export const IconButton: FC<IconButtonProps> = ({
     variant={variant}
     size={size}
     type={type}
-    disabled={disabled}
-    data-testid={dataTestId}
+    // Motion
+    whileTap={{ top: 2, boxShadow: 'none', scale: 0.98 }}
+    transition={{ duration: 0.01 }}
   >
     {icon}
   </S.IconButton>

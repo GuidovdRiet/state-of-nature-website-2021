@@ -1,9 +1,7 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 // Types
 import { EventType } from '../../../types/EventType';
-import PageWrapper from '../../wrappers/pageWrapper/PageWrapper';
-import SectionWrapper from '../../wrappers/sectionWrapper/SectionWrapper';
 
 // Components
 import InstagramIcon from '../../media/icons/socials/InstagramIcon';
