@@ -27,8 +27,12 @@ export default function EventHighlightSection({
       <S.EventHighlightSection>
         <div className="event-highlight-section__content-container">
           <div className="event-highlight-section__content-wrapper">
-            <h4>{isEventInFuture ? 'Volgend evenement' : 'Vorig evenement'}</h4>
-            <h2>{fields.title}</h2>
+            <h4 className="event-highlight-section__status">
+              {isEventInFuture ? 'Volgend evenement' : 'Vorig evenement'}
+            </h4>
+            <div className="event-highlight-section__title-wrapper">
+              <h2 className="event-highlight-section__title">{fields.title}</h2>
+            </div>
             <Button text={fields.buttonText} variant="primaryGreen" />
           </div>
           <div className="event-highlight-section__illustration-wrapper">
