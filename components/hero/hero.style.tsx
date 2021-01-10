@@ -10,8 +10,13 @@ export const Hero = styled.section`
 
   .hero__text {
     text-align: center;
-    font-size: 10.2em;
+    font-size: 8.6em;
     margin-bottom: 75px;
+    max-width: 1000px;
+    @media (min-width: 1600px) {
+      font-size: 10.2em;
+      max-width: 1200px;
+    }
   }
 
   .hero__text span {

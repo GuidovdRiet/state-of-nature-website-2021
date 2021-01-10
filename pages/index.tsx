@@ -49,13 +49,14 @@ export async function getStaticProps() {
   const navigationData = await fetchEntry('20WVzXIkln64XWMt29wnZS');
   let upcomingEvent;
 
-  // Check if there are is an upcoming event
+  // Check if there is an upcoming event and assign to value: upcomingEvent
   if (events.items.length) {
     upcomingEvent = events.items.find((event: EventType) =>
       isFuture(new Date(event.fields.date))
     );
   }
 
+  // Sort events by latest event
   const sortedEvents = events.items.sort(
     (eventA: EventType, eventB: EventType) =>
       compareDesc(new Date(eventA.fields.date), new Date(eventB.fields.date))

@@ -3,23 +3,31 @@ import styled from '@emotion/styled';
 export const EventHighlightSection = styled.div`
   background-color: ${({ theme }) => theme.colors.primaryOrange};
   display: flex;
-  height: 3000px;
-  padding-top: 200px;
+  padding: 65px 76px;
+  margin-top: 150px;
+  justify-content: space-between;
+  align-items: stretch;
 
-  .event-highlight-section__image-wrapper {
+  .event-highlight-section__content-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
   }
 
-  img {
-    --stroke-pos: 1px;
-    --stroke-neg: -1px;
-    --stroke-color: ${({ theme }) => theme.colors.primaryYellow};
-    filter: drop-shadow(var(--stroke-pos) 0 0 var(--stroke-color))
-      drop-shadow(var(--stroke-neg) 0 var(--stroke-color))
-      drop-shadow(0 var(--stroke-pos) 0 var(--stroke-color))
-      drop-shadow(0 var(--stroke-neg) 0 var(--stroke-color))
-      drop-shadow(var(--stroke-pos) var(--stroke-pos) 0 var(--stroke-color))
-      drop-shadow(var(--stroke-pos) var(--stroke-neg) 0 var(--stroke-color))
-      drop-shadow(var(--stroke-neg) var(--stroke-pos) 0 var(--stroke-color))
-      drop-shadow(var(--stroke-neg) var(--stroke-neg) 0 var(--stroke-color));
+  .event-highlight-section__content-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .event-highlight-section__illustration-wrapper {
+    position: absolute;
+    max-width: 560px;
+    top: 0;
+    z-index: 0;
+  }
+
+  .event-highlight-section__image-wrapper {
+    width: 550px;
   }
 `;

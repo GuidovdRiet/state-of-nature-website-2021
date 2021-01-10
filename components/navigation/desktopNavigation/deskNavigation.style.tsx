@@ -9,6 +9,10 @@ export const Navigation = styled.nav`
   padding: 0 30px;
   margin: 30px auto 0 auto;
 
+  .navigation__nav-logo {
+    width: 140px;
+  }
+
   .navigation__nav-items-list {
     display: flex;
     list-style: none;
@@ -27,6 +31,7 @@ export const Navigation = styled.nav`
     transition: border 0.1s ease-in;
     border: 1px solid transparent;
     border-radius: 5px;
+    ${({ theme }) => theme.helpers.fontSmoothing};
   }
 
   .navigation__nav-items-list > li:hover {

@@ -18,25 +18,32 @@ export default function EventHighlightSection({
   event,
 }: EventHighlightSectionProps): ReactElement | null {
   if (!event) return null;
-  const isEventInFuture = isFuture(new Date(event.fields.date));
 
-  console.log(`https:${event.fields.image.fields.file.url}`);
+  const { fields } = event;
+  const isEventInFuture = isFuture(new Date(fields.date));
 
   return (
     <SectionWrapper>
       <S.EventHighlightSection>
-        <div className="event-highlight-section__content-wrapper">
-          <span>
-            {isEventInFuture ? 'Volgend evenement' : 'Vorig evenement'}
-          </span>
-          <h2>{event.fields.title}</h2>
-          <Button text={event.fields.buttonText} variant="primaryGreen" />
+        <div className="event-highlight-section__content-container">
+          <div className="event-highlight-section__content-wrapper">
+            <h4>{isEventInFuture ? 'Volgend evenement' : 'Vorig evenement'}</h4>
+            <h2>{fields.title}</h2>
+            <Button text={fields.buttonText} variant="primaryGreen" />
+          </div>
+          <div className="event-highlight-section__illustration-wrapper">
+            <Image
+              src={`https:${fields.illustration.fields.file.url}`}
+              width={fields.illustration.fields.file.details.image.width}
+              height={fields.illustration.fields.file.details.image.height}
+            />
+          </div>
         </div>
         <div className="event-highlight-section__image-wrapper">
           <Image
-            src={`https:${event.fields.image.fields.file.url}`}
-            width={event.fields.image.fields.file.details.image.width}
-            height={event.fields.image.fields.file.details.image.height}
+            src={`https:${fields.image.fields.file.url}`}
+            width={fields.image.fields.file.details.image.width}
+            height={fields.image.fields.file.details.image.height}
           />
         </div>
       </S.EventHighlightSection>

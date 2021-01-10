@@ -43,6 +43,7 @@ const Navigation: FC<NavigationProps> = ({ upcomingEvent, navigationData }) => (
     <img
       src={navigationData.fields.logo.fields.file.url}
       alt="State of Nature logo"
+      className="navigation__nav-logo"
     />
     <ul className="navigation__nav-items-list">
       <li>
