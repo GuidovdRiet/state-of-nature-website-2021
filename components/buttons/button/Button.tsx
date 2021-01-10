@@ -10,6 +10,7 @@ export interface ButtonProps {
   size?: 'small' | 'normal' | 'large';
   variant?: 'primaryOrange' | 'primaryGreen';
   text: string;
+  arrow?: SVGProps<SVGSVGElement>;
   icon?: SVGProps<SVGSVGElement>;
 }
 
@@ -19,6 +20,7 @@ export const Button: FC<ButtonProps> = ({
   variant = 'primaryOrange',
   size = 'normal',
   text = 'Read more',
+  arrow,
   icon,
 }) => (
   <S.Button
@@ -29,9 +31,11 @@ export const Button: FC<ButtonProps> = ({
     // Motion
     whileTap={{ top: 2, boxShadow: 'none', scale: 0.98 }}
     transition={{ duration: 0.01 }}
+    hasArrow={!!arrow}
   >
     {icon && icon}
     {text}
+    {arrow && <div className="button__arrow-icon-wrapper">{arrow}</div>}
   </S.Button>
 );
 

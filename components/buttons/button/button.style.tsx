@@ -21,17 +21,22 @@ export const colorVariants = (theme: Theme) => ({
   `,
 });
 
-const sizeVariants = () => ({
+const sizeVariants = ({ hasArrow }: { hasArrow: boolean }) => ({
   small: css`
     font-size: 0.7em;
-    padding: 7px 10px;
     svg {
       width: 13px;
     }
   `,
   normal: css`
     font-size: 2.2em;
-    padding: 7px 21px;
+    ${hasArrow
+      ? css`
+          padding: 7px 13px;
+        `
+      : css`
+          padding: 7px 21px;
+        `}
     svg {
       width: 16px;
     }
@@ -48,6 +53,7 @@ const sizeVariants = () => ({
 interface ButtonProps {
   size?: 'small' | 'normal' | 'large';
   variant?: 'primaryOrange' | 'primaryGreen';
+  hasArrow: boolean;
 }
 
 export const Button = styled(motion.button)<ButtonProps>`
@@ -72,12 +78,22 @@ export const Button = styled(motion.button)<ButtonProps>`
     })}
 
   /* Size variants */
-  ${variant({
-    prop: 'size',
-    variants: sizeVariants(),
-  })}
+  ${({ hasArrow }) =>
+    variant({
+      prop: 'size',
+      variants: sizeVariants({ hasArrow }),
+    })}
 
   &:focus {
     outline: 0;
+  }
+
+  .button__arrow-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2px 0 0 10px;
+    svg {
+      width: 25px;
+    }
   }
 `;
