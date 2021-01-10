@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 
 export const EventHighlightSection = styled.div`
-  background-color: ${({ theme }) => theme.colors.primaryOrange};
   display: flex;
-  padding: 65px 76px;
-  margin-top: 150px;
+  background-color: ${({ theme }) => theme.colors.primaryOrange};
   justify-content: space-between;
   align-items: stretch;
+  padding: 65px 76px;
+  margin: 150px 0;
 
   .event-highlight-section__content-container {
-    position: relative;
     display: flex;
+    position: relative;
     align-items: center;
     flex: 1;
   }
@@ -22,9 +22,13 @@ export const EventHighlightSection = styled.div`
 
   .event-highlight-section__illustration-wrapper {
     position: absolute;
-    max-width: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     z-index: 0;
+    width: 100%;
+    max-height: 550px;
   }
 
   .event-highlight-section__image-wrapper {
