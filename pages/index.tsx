@@ -7,15 +7,12 @@ import Head from '../components/head';
 import Hero from '../components/hero/Hero';
 import PageWrapper from '../components/wrappers/pageWrapper/PageWrapper';
 import EventHighlightSection from '../components/sections/eventHighlightSection/EventHighlightSection';
-import Slider from '../components/sliders/Slider';
+import SliderSection from '../components/sections/sliderSection/SliderSection';
 
 // Types
 import { EventType } from '../types/EventType';
 import { HeroSectionType } from '../types/sectionTypes/HeroSectionType';
 import Navigation from '../components/navigation/desktopNavigation/DesktopNavigation';
-
-// Style
-import * as S from '../components/sliders/slider.style';
 
 interface HomeProps {
   data: {
@@ -43,22 +40,8 @@ const Home: FC<HomeProps> = ({
     }
   >
     {hero && <Hero text={hero.fields.heroText.content[0].content} />}
-    {<EventHighlightSection event={upcomingEvent || events[0]} />}
-    {
-      <Slider>
-        {imageSlider.fields.slider.map((slide) => (
-          <S.Slide
-            width={slide.fields.file.details.image.width}
-            height={slide.fields.file.details.image.height}
-          >
-            <img
-              src={slide.fields.file.url}
-              alt={slide.fields.file.description}
-            />
-          </S.Slide>
-        ))}
-      </Slider>
-    }
+    <EventHighlightSection event={upcomingEvent || events[0]} />
+    <SliderSection imageSlider={imageSlider} />
   </PageWrapper>
 );
 

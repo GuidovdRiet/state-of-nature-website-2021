@@ -20,6 +20,13 @@ declare module '@emotion/react' {
       red500: string;
       purple300: string;
     };
+    breakPoints: {
+      extraSmall: number;
+      small: number;
+      medium: number;
+      large: number;
+      extraLarge: number;
+    };
     helpers: {
       fontSmoothing: string;
     };

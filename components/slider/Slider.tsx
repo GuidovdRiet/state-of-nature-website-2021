@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 // style
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import * as S from './slider.style';
 
 export default function SimpleSlider({
   children,
@@ -12,13 +13,18 @@ export default function SimpleSlider({
 }) {
   const settings = {
     infinite: true,
-    speed: 500,
-    slidesToShow: 3,
+    speed: 600,
+    slidesToShow: 4,
     slidesToScroll: 1,
     centerMode: true,
     cssEase: 'linear',
     variableWidth: true,
+    focusOnSelect: true,
   };
 
-  return <Slider {...settings}>{children}</Slider>;
+  return (
+    <S.SliderWrapper>
+      <Slider {...settings}>{children}</Slider>
+    </S.SliderWrapper>
+  );
 }
