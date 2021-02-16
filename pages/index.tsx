@@ -18,6 +18,9 @@ interface HomeProps {
   data: {
     title: string;
     hero: HeroSectionType;
+    imageSlider: any;
+    textAndImage: any;
+    textAndImage2: any;
   };
   events: EventType[];
   navigationData: any;
@@ -25,7 +28,7 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({
-  data: { title, hero, imageSlider },
+  data: { title, hero, imageSlider, textAndImage, textAndImage2 },
   events,
   navigationData,
   upcomingEvent,
@@ -42,6 +45,8 @@ const Home: FC<HomeProps> = ({
     {hero && <Hero text={hero.fields.heroText.content[0].content} />}
     <EventHighlightSection event={upcomingEvent || events[0]} />
     <SliderSection imageSlider={imageSlider} />
+    <ImageTextSection data={textAndImage.fields} />
+    <ImageTextSection data={textAndImage2.fields} />
   </PageWrapper>
 );
 

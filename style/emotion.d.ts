@@ -21,11 +21,11 @@ declare module '@emotion/react' {
       purple300: string;
     };
     breakPoints: {
-      extraSmall: number;
-      small: number;
-      medium: number;
-      large: number;
-      extraLarge: number;
+      extraSmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      extraLarge: string;
     };
     helpers: {
       fontSmoothing: string;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 // Components
 import Slider from '../../slider/Slider';
@@ -22,9 +23,11 @@ const SliderSection: React.FC<SliderSectionProps> = ({ imageSlider }) => (
           width={slide.fields.file.details.image.width}
           height={slide.fields.file.details.image.height}
         >
-          <img
-            src={slide.fields.file.url}
+          <Image
+            src={`https:${slide.fields.file.url}`}
             alt={slide.fields.file.description}
+            width={slide.fields.file.details.image.width}
+            height={slide.fields.file.details.image.height}
           />
         </Slide>
       ))}
