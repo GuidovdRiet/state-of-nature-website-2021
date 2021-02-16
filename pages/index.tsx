@@ -8,6 +8,7 @@ import Hero from '../components/hero/Hero';
 import PageWrapper from '../components/wrappers/pageWrapper/PageWrapper';
 import EventHighlightSection from '../components/sections/eventHighlightSection/EventHighlightSection';
 import SliderSection from '../components/sections/sliderSection/SliderSection';
+import ImageTextSection from '../components/sections/textAndImageSection/ImageTextSection';
 
 // Types
 import { EventType } from '../types/EventType';
