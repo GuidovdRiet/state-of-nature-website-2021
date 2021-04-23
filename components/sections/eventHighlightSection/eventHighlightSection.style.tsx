@@ -26,7 +26,7 @@ export const EventHighlightSection = styled.div`
     padding: 8px 10px;
     font-size: 2.2em;
     font-family: 'Londrina Solid';
-    font-weight: 300;
+    font-weight: 500;
     color: ${({ theme }) => theme.colors.grey400};
     ${({ theme }) => theme.helpers.fontSmoothing};
   }
@@ -42,7 +42,7 @@ export const EventHighlightSection = styled.div`
     font-weight: 100;
     line-height: 1.55em;
     ${({ theme }) => theme.helpers.fontSmoothing};
-
+    font-weight: 500;
     display: inline;
     padding: 5px 0px;
 

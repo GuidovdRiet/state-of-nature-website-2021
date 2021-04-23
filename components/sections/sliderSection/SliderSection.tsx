@@ -34,4 +34,5 @@ const SliderSection: React.FC<SliderSectionProps> = ({ imageSlider }) => (
     </Slider>
   </S.SliderSection>
 );
+
 export default SliderSection;

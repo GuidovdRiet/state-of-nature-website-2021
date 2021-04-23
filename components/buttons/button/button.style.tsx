@@ -70,6 +70,7 @@ export const Button = styled(motion.button)<ButtonProps>`
   font-weight: 300;
   ${({ theme }) => theme.helpers.fontSmoothing};
   position: relative;
+  font-weight: 500;
 
   /* Color variants */
   ${({ theme }) =>
