@@ -30,7 +30,7 @@ export const ImageTextSection = styled.div<ImageTextSectionProps>`
   }
   .image-text-section__image-wrapper {
     width: 50%;
-    margin: ${({ alignTextLeft }) => (alignTextLeft ? '0 10%' : '0 10% 0 0')};
+    margin: ${({ alignTextLeft }) => (alignTextLeft ? '0 10%' : '0 10% 0 5%')};
     display: flex;
     justify-content: center;
     align-items: center;

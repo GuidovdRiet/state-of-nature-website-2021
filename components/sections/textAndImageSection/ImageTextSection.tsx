@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 // Style
@@ -9,12 +9,14 @@ import ImageTextSectionDataType, { Content } from './imageTextSection.type';
 
 // Components
 import SectionWrapper from '../../wrappers/sectionWrapper/SectionWrapper';
+import Button from '../../buttons/button/Button';
 
 export interface ImageTextSectionProps {
   data: ImageTextSectionDataType;
 }
 
 function ImageTextSection({ data }: ImageTextSectionProps) {
+  console.log({ data });
   function getTextContent(content: Content) {
     switch (content.nodeType) {
       case 'heading-2':
@@ -32,7 +34,7 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
     <SectionWrapper>
       <S.ImageTextSection alignTextLeft={data.alignTextLeft}>
         <div className="image-text-section__text-wrapper">
-          {data.text.content.map((content) => (
+          {data.text.content.map((content: Content) => (
             <>{getTextContent(content)}</>
           ))}
         </div>
@@ -43,6 +45,10 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
             width={data.image.fields.file.details.image.width}
             height={data.image.fields.file.details.image.height}
           />
+        </div>
+        <div className="image-text-section__button-wrapper">
+          <Button type="button" text="Tickets" />
+          <Button type="button" text="Tickets" />
         </div>
       </S.ImageTextSection>
     </SectionWrapper>

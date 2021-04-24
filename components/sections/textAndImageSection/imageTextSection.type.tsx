@@ -10,11 +10,14 @@ export interface Image3 {
   height: number;
 }
 
+export interface Button {}
+
 interface Root {
   text: Text;
   image: Image;
   alignTextLeft: boolean;
   readNextTextIcon: ReadNextTextIcon;
+  button: Button;
 }
 
 export interface Data {}

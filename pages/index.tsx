@@ -53,6 +53,15 @@ const Home: FC<HomeProps> = ({
 
 export async function getStaticProps() {
   const data = await fetchEntry('6po8NvulhuXrjxMaKp5jIh');
+  const buttonData = await fetchEntry(
+    data.fields.textAndImage2.fields.button.sys.id
+  );
+  const buttonDataSecond = await fetchEntry(
+    data.fields.textAndImage2.fields.button_second.sys.id
+  );
+  data.fields.textAndImage2.fields.button = buttonData;
+  data.fields.textAndImage2.fields.button_second = buttonDataSecond;
+
   const events = await fetchContentType('event');
   const navigationData = await fetchEntry('20WVzXIkln64XWMt29wnZS');
   let upcomingEvent;
