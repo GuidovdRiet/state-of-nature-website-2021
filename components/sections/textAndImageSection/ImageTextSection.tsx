@@ -11,6 +11,7 @@ import ImageTextSectionDataType, { Content } from './imageTextSection.type';
 // Components
 import SectionWrapper from '../../wrappers/sectionWrapper/SectionWrapper';
 import Button from '../../buttons/button/Button';
+import LongArrowRightIcon from '../../media/icons/arrows/LongArrowRightIcon';
 
 export interface ImageTextSectionProps {
   data: ImageTextSectionDataType;
@@ -39,8 +40,16 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
           ))}
           {data.button?.fields && data.button_second?.fields && (
             <div className="image-text-section__button-wrapper">
-              <Button type="button" text={data.button?.fields.text} />
-              <Button type="button" text={data.button_second?.fields.text} />
+              <Button
+                text={data.button?.fields.text}
+                variant="primaryGreen"
+                arrow={<LongArrowRightIcon />}
+              />
+              <Button
+                text={data.button_second?.fields.text}
+                variant="primaryGreen"
+                arrow={<LongArrowRightIcon />}
+              />
             </div>
           )}
         </div>

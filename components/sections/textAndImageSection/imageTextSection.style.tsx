@@ -28,6 +28,13 @@ export const ImageTextSection = styled.div<ImageTextSectionProps>`
       line-height: 23px;
     }
   }
+  .image-text-section__button-wrapper {
+    display: flex;
+    margin-top: 45px;
+  }
+  .image-text-section__button-wrapper button:first-of-type {
+    margin-right: 20px;
+  }
   .image-text-section__image-wrapper {
     width: 50%;
     margin: ${({ alignTextLeft }) => (alignTextLeft ? '0 10%' : '0 10% 0 5%')};

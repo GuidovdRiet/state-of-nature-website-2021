@@ -11,7 +11,7 @@ export interface ButtonProps {
   variant?: 'primaryOrange' | 'primaryGreen';
   text: string;
   arrow?: SVGProps<SVGSVGElement>;
-  icon?: SVGProps<SVGSVGElement>;
+  icon?: SVGProps<SVGSVGElement> | HTMLElement;
 }
 
 export const Button: FC<ButtonProps> = ({
