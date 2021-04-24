@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 // Style
+import { buttons } from 'polished';
 import * as S from './imageTextSection.style';
 
 // Type
@@ -36,10 +37,12 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
           {data.text.content.map((content: Content) => (
             <>{getTextContent(content)}</>
           ))}
-          <div className="image-text-section__button-wrapper">
-            <Button type="button" text="Tickets" />
-            <Button type="button" text="Tickets" />
-          </div>
+          {data.button?.fields && data.button_second?.fields && (
+            <div className="image-text-section__button-wrapper">
+              <Button type="button" text={data.button?.fields.text} />
+              <Button type="button" text={data.button_second?.fields.text} />
+            </div>
+          )}
         </div>
         <div className="image-text-section__image-wrapper">
           <Image
