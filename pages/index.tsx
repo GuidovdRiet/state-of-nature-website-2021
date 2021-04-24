@@ -33,25 +33,23 @@ const Home: FC<HomeProps> = ({
   events,
   navigationData,
   upcomingEvent,
-}) => {
-  return (
-    <PageWrapper
-      head={<Head title={title} />}
-      navigation={
-        <Navigation
-          upcomingEvent={upcomingEvent}
-          navigationData={navigationData}
-        />
-      }
-    >
-      {hero && <Hero text={hero.fields.heroText.content[0].content} />}
-      <EventHighlightSection event={upcomingEvent || events[0]} />
-      <SliderSection imageSlider={imageSlider} />
-      <ImageTextSection data={textAndImage.fields} />
-      <ImageTextSection data={textAndImage2.fields} />
-    </PageWrapper>
-  );
-};
+}) => (
+  <PageWrapper
+    head={<Head title={title} />}
+    navigation={
+      <Navigation
+        upcomingEvent={upcomingEvent}
+        navigationData={navigationData}
+      />
+    }
+  >
+    {hero && <Hero text={hero.fields.heroText.content[0].content} />}
+    <EventHighlightSection event={upcomingEvent || events[0]} />
+    <SliderSection imageSlider={imageSlider} />
+    <ImageTextSection data={textAndImage.fields} />
+    <ImageTextSection data={textAndImage2.fields} />
+  </PageWrapper>
+);
 
 export async function getStaticProps() {
   const data = await fetchEntry('6po8NvulhuXrjxMaKp5jIh');

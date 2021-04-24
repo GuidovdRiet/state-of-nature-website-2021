@@ -14,9 +14,7 @@ export interface ImageTextSectionProps {
   data: ImageTextSectionDataType;
 }
 
-const ImageTextSection: FC<ImageTextSectionProps> = ({ data }) => {
-  console.log({ data });
-
+function ImageTextSection({ data }: ImageTextSectionProps) {
   function getTextContent(content: Content) {
     switch (content.nodeType) {
       case 'heading-2':
@@ -32,11 +30,11 @@ const ImageTextSection: FC<ImageTextSectionProps> = ({ data }) => {
 
   return (
     <SectionWrapper>
-      <S.ImageTextSection>
+      <S.ImageTextSection alignTextLeft={data.alignTextLeft}>
         <div className="image-text-section__text-wrapper">
-          {data.text.content.map((content) => {
-            return <>{getTextContent(content)}</>;
-          })}
+          {data.text.content.map((content) => (
+            <>{getTextContent(content)}</>
+          ))}
         </div>
         <div className="image-text-section__image-wrapper">
           <Image
@@ -49,6 +47,6 @@ const ImageTextSection: FC<ImageTextSectionProps> = ({ data }) => {
       </S.ImageTextSection>
     </SectionWrapper>
   );
-};
+}
 
 export default ImageTextSection;
