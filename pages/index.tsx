@@ -9,6 +9,7 @@ import PageWrapper from '../components/wrappers/pageWrapper/PageWrapper';
 import EventHighlightSection from '../components/sections/eventHighlightSection/EventHighlightSection';
 import SliderSection from '../components/sections/sliderSection/SliderSection';
 import ImageTextSection from '../components/sections/textAndImageSection/ImageTextSection';
+import Footer from '../components/sections/footer/Footer';
 
 // Types
 import { EventType } from '../types/EventType';
@@ -22,6 +23,7 @@ interface HomeProps {
     imageSlider: any;
     textAndImage: any;
     textAndImage2: any;
+    contact: any;
   };
   events: EventType[];
   navigationData: any;
@@ -29,7 +31,7 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({
-  data: { title, hero, imageSlider, textAndImage, textAndImage2 },
+  data: { title, hero, imageSlider, textAndImage, textAndImage2, contact },
   events,
   navigationData,
   upcomingEvent,
@@ -48,6 +50,7 @@ const Home: FC<HomeProps> = ({
     <SliderSection imageSlider={imageSlider} />
     <ImageTextSection data={textAndImage.fields} />
     <ImageTextSection data={textAndImage2.fields} />
+    <Footer data={contact.fields} />
   </PageWrapper>
 );
 
