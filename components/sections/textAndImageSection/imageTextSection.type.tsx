@@ -10,7 +10,52 @@ export interface Image3 {
   height: number;
 }
 
-export interface Button {}
+export interface Field {
+  id: string;
+  name: string;
+  type: string;
+  localized: boolean;
+  required: boolean;
+  validations: any[];
+  disabled: boolean;
+  omitted: boolean;
+  linkType?: string;
+}
+
+export interface ButtonSys {
+  space: CreatedBy;
+  id: string;
+  type: string;
+  createdAt: Date;
+  updatedAt: Date;
+  environment: CreatedBy;
+  publishedVersion: number;
+  publishedAt: Date;
+  firstPublishedAt: Date;
+  createdBy: CreatedBy;
+  updatedBy: CreatedBy;
+  publishedCounter: number;
+  version: number;
+  publishedBy: CreatedBy;
+}
+
+export interface CreatedBy {
+  sys: CreatedBySys;
+}
+
+export interface CreatedBySys {
+  type: string;
+  linkType: string;
+  id: string;
+}
+
+export interface Button {
+  name: string;
+  description: string;
+  displayField: string;
+  fields: Field[];
+  sys: ButtonSys;
+}
 
 interface Root {
   text: Text;

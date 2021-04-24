@@ -16,7 +16,6 @@ export interface ImageTextSectionProps {
 }
 
 function ImageTextSection({ data }: ImageTextSectionProps) {
-  console.log({ data });
   function getTextContent(content: Content) {
     switch (content.nodeType) {
       case 'heading-2':
@@ -37,6 +36,10 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
           {data.text.content.map((content: Content) => (
             <>{getTextContent(content)}</>
           ))}
+          <div className="image-text-section__button-wrapper">
+            <Button type="button" text="Tickets" />
+            <Button type="button" text="Tickets" />
+          </div>
         </div>
         <div className="image-text-section__image-wrapper">
           <Image
@@ -45,10 +48,6 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
             width={data.image.fields.file.details.image.width}
             height={data.image.fields.file.details.image.height}
           />
-        </div>
-        <div className="image-text-section__button-wrapper">
-          <Button type="button" text="Tickets" />
-          <Button type="button" text="Tickets" />
         </div>
       </S.ImageTextSection>
     </SectionWrapper>
