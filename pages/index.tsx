@@ -54,6 +54,8 @@ const Home: FC<HomeProps> = ({
   </PageWrapper>
 );
 
+// This
+
 export async function getStaticProps() {
   const data = await fetchEntry('6po8NvulhuXrjxMaKp5jIh');
   const buttonData = await fetchEntry(
