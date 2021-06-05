@@ -2,6 +2,9 @@ import React from 'react';
 import normalize from 'emotion-normalize';
 
 // Font Faces
+import londrinaSolidFontFace from './fontFaces/londrinaSolidFontFace';
+import sourceSansProFontFace from './fontFaces/sourceSansProFontFace';
+
 import { css, Global, useTheme } from '@emotion/react';
 
 const GlobalStyle = () => {
@@ -10,6 +13,8 @@ const GlobalStyle = () => {
     <Global
       styles={css`
         ${normalize}
+        ${londrinaSolidFontFace},
+        ${sourceSansProFontFace},
 
         body {
           margin: 0;
