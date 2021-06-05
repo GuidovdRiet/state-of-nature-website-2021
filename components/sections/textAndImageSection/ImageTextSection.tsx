@@ -12,6 +12,7 @@ import ImageTextSectionDataType, { Content } from './imageTextSection.type';
 import SectionWrapper from '../../wrappers/sectionWrapper/SectionWrapper';
 import Button from '../../buttons/button/Button';
 import LongArrowRightIcon from '../../media/icons/arrows/LongArrowRightIcon';
+import { contentfulLoader } from '../eventHighlightSection/EventHighlightSection';
 
 export interface ImageTextSectionProps {
   data: ImageTextSectionDataType;
@@ -59,6 +60,7 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
             alt={data.image.fields.file.fileName}
             width={data.image.fields.file.details.image.width}
             height={data.image.fields.file.details.image.height}
+            loader={contentfulLoader}
           />
         </div>
       </S.ImageTextSection>

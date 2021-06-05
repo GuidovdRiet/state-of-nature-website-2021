@@ -1,6 +1,6 @@
 import { isFuture } from 'date-fns';
 import React, { ReactElement } from 'react';
-import Image from 'next/image';
+import Image, { ImageLoaderProps } from 'next/image';
 
 // Components
 import LongArrowRightIcon from '../../media/icons/arrows/LongArrowRightIcon';
@@ -16,6 +16,16 @@ import * as S from './eventHighlightSection.style';
 interface EventHighlightSectionProps {
   event: EventType | undefined;
 }
+
+export const contentfulLoader = ({ src, quality, width }: ImageLoaderProps) => {
+  const params = [`w=${width}`];
+
+  if (quality) {
+    params.push(`q=${quality}`);
+  }
+
+  return `${src}?${params.join('&')}`;
+};
 
 export default function EventHighlightSection({
   event,
@@ -49,6 +59,7 @@ export default function EventHighlightSection({
               src={`https:${fields.illustration.fields.file.url}`}
               width={fields.illustration.fields.file.details.image.width}
               height={fields.illustration.fields.file.details.image.height}
+              loader={contentfulLoader}
             />
           </div>
         </div>
@@ -57,6 +68,7 @@ export default function EventHighlightSection({
             src={`https:${fields.image.fields.file.url}`}
             width={fields.image.fields.file.details.image.width}
             height={fields.image.fields.file.details.image.height}
+            loader={contentfulLoader}
           />
         </div>
       </S.EventHighlightSection>

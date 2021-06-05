@@ -7,6 +7,7 @@ import Slide from '../../slider/slide/Slide';
 
 // Style
 import * as S from './sliderSection.style';
+import { contentfulLoader } from '../eventHighlightSection/EventHighlightSection';
 
 interface SliderSectionProps {
   imageSlider: any;
@@ -28,6 +29,7 @@ const SliderSection: React.FC<SliderSectionProps> = ({ imageSlider }) => (
             alt={slide.fields.file.description}
             width={slide.fields.file.details.image.width}
             height={slide.fields.file.details.image.height}
+            loader={contentfulLoader}
           />
         </Slide>
       ))}
