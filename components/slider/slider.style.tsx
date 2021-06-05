@@ -13,7 +13,6 @@ export const SliderWrapper = styled.div`
   }
   /* the parent */
   .slick-list {
-    margin: 0 -27px;
     overflow: hidden;
   }
 `;

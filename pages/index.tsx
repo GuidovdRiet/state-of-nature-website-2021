@@ -50,7 +50,7 @@ const Home: FC<HomeProps> = ({
     <SliderSection imageSlider={imageSlider} />
     <ImageTextSection data={textAndImage.fields} />
     <ImageTextSection data={textAndImage2.fields} />
-    <Footer data={contact.fields} />
+    <Footer />
   </PageWrapper>
 );
 

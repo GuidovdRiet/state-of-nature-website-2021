@@ -17,6 +17,7 @@ export default function SimpleSlider({
     slidesToShow: 4,
     slidesToScroll: 1,
     centerMode: true,
+    arrows: false,
     cssEase: 'linear',
     variableWidth: true,
     focusOnSelect: true,
