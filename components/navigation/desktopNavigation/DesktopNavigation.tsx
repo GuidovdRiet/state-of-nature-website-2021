@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import { useRouter } from 'next/router';
+import React, { FC, useEffect } from 'react';
 
 // Types
 import { EventType } from '../../../types/EventType';
@@ -37,13 +36,16 @@ interface NavigationType {
 export interface NavigationProps {
   upcomingEvent: EventType | undefined;
   navigationData: NavigationType;
+  forwardRef: React.MutableRefObject<null>;
 }
 
-const Navigation: FC<NavigationProps> = ({ upcomingEvent, navigationData }) => {
-  const router = useRouter();
-
+const Navigation: FC<NavigationProps> = ({
+  upcomingEvent,
+  navigationData,
+  forwardRef,
+}) => {
   return (
-    <S.Navigation>
+    <S.Navigation ref={forwardRef}>
       <img
         src={navigationData.fields.logo.fields.file.url}
         alt="State of Nature logo"

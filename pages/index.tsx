@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import { compareDesc, isFuture } from 'date-fns';
 import { fetchContentType, fetchEntry } from '../util/contentfulPosts';
 
@@ -35,24 +35,53 @@ const Home: FC<HomeProps> = ({
   events,
   navigationData,
   upcomingEvent,
-}) => (
-  <PageWrapper
-    head={<Head title={title} />}
-    navigation={
-      <Navigation
-        upcomingEvent={upcomingEvent}
-        navigationData={navigationData}
-      />
-    }
-  >
-    {hero && <Hero text={hero.fields.heroText.content[0].content} />}
-    <EventHighlightSection event={upcomingEvent || events[0]} />
-    <SliderSection imageSlider={imageSlider} />
-    <ImageTextSection data={textAndImage.fields} />
-    <ImageTextSection data={textAndImage2.fields} />
-    <Footer />
-  </PageWrapper>
-);
+}) => {
+  const desktopNavigationRef = useRef(null);
+
+  function setIsScrolled() {
+    const navigation: HTMLElement = desktopNavigationRef.current;
+    if (!navigation) return;
+
+    const scrolledClassName = 'sticky';
+    const hasScrolledClassName = [...navigation.classList].includes(
+      scrolledClassName
+    );
+    const shouldHaveBs =
+      document.documentElement.scrollTop > navigation.offsetHeight / 4;
+
+    if (shouldHaveBs && !hasScrolledClassName)
+      navigation.classList.add(scrolledClassName);
+    else if (!shouldHaveBs && hasScrolledClassName)
+      navigation.classList.remove(scrolledClassName);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', setIsScrolled);
+    return () => {
+      window.removeEventListener('scroll', setIsScrolled);
+    };
+  }, []);
+
+  return (
+    <PageWrapper
+      head={<Head title={title} />}
+      navigation={
+        <Navigation
+          upcomingEvent={upcomingEvent}
+          navigationData={navigationData}
+          forwardRef={desktopNavigationRef}
+        />
+      }
+    >
+      {hero && <Hero text={hero.fields.heroText.content[0].content} />}
+      <EventHighlightSection event={upcomingEvent || events[0]} />
+      <SliderSection imageSlider={imageSlider} />
+      <ImageTextSection data={textAndImage.fields} />
+      <ImageTextSection data={textAndImage2.fields} />
+      <Footer />
+    </PageWrapper>
+  );
+};
 
 export async function getStaticProps() {
   const data = await fetchEntry('6po8NvulhuXrjxMaKp5jIh');

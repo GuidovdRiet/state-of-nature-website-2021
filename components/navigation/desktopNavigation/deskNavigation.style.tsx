@@ -9,6 +9,11 @@ export const Navigation = styled.nav`
   padding: 0 30px;
   margin: 30px auto 0 auto;
 
+  &.sticky {
+    position: sticky;
+    top: 0;
+  }
+
   .navigation__nav-logo {
     width: 140px;
   }
