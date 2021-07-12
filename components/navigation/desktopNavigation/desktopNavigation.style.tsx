@@ -1,17 +1,33 @@
 import styled from '@emotion/styled';
 
 export const Navigation = styled.nav`
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  max-width: 1283px;
-  padding: 0 30px;
-  margin: 30px auto 0 auto;
+  z-index: 9999;
+
+  .navigation__wrapper {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 1283px;
+    padding: 0 30px;
+    margin: 30px auto 0px auto;
+  }
 
   &.sticky {
+    background-color: ${({ theme }) => theme.colors.background};
     position: sticky;
-    top: 0;
+    top: -30px;
+    padding: 10px 30px;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.grey100};
+    box-shadow: rgb(50 50 93 / 0%) 7px -2px 5px -1px,
+      rgb(0 0 0 / 1%) 0px 1px 3px;
+  }
+
+  &.sticky .navigation__nav-logo {
+    width: 100px;
+    position: absolute;
+    left: 218px;
+    top: 40px;
   }
 
   .navigation__nav-logo {

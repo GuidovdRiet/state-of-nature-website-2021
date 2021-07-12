@@ -21,7 +21,7 @@ const GlobalStyle = () => {
           padding: 0;
           word-wrap: break-word;
           position: relative;
-          background-color: #fbfaef;
+          background-color: ${theme.colors.background};
         }
 
         html {

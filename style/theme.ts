@@ -12,6 +12,8 @@ const theme: Theme = {
     grey300: '#424141',
     grey400: '#323232',
 
+    background: '#fbfaef',
+
     white: '#ffff',
     black: '#000000',
 
