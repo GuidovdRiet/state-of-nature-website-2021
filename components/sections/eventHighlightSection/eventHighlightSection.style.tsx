@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 
-export const EventHighlightSection = styled.div`
+interface EventHighlightSectionProps {
+  id: string;
+}
+
+export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
   display: flex;
   background-color: ${({ theme }) => theme.colors.primaryOrange};
   justify-content: space-between;

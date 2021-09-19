@@ -37,7 +37,7 @@ export default function EventHighlightSection({
 
   return (
     <SectionWrapper>
-      <S.EventHighlightSection>
+      <S.EventHighlightSection id="event-highlight-section">
         <div className="event-highlight-section__content-container">
           <div className="event-highlight-section__content-wrapper">
             <h4 className="event-highlight-section__status">

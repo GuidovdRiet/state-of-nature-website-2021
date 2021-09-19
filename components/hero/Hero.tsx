@@ -1,22 +1,24 @@
 import React, { FC, useEffect } from 'react';
 import { useMotionValue } from 'framer-motion';
-import IconButton from '../buttons/iconButton/IconButton';
-import SectionWrapper from '../wrappers/sectionWrapper/SectionWrapper';
-
-// Components
-import ShortArrowDown from '../media/icons/arrows/ShortArrowDownIcon';
+import { useRouter } from 'next/router';
 
 // Style
 import * as S from './hero.style';
+
+// Components
 import ScaleneTriangleShape from '../media/shapes/ScaleneTriangleShape';
 import SquareShape from '../media/shapes/SquareShape';
 import TriangleShape from '../media/shapes/TriangleShape';
+import IconButton from '../buttons/iconButton/IconButton';
+import SectionWrapper from '../wrappers/sectionWrapper/SectionWrapper';
+import ShortArrowDown from '../media/icons/arrows/ShortArrowDownIcon';
 
 interface HeroProps {
   text: { value: string; marks: { type: 'bold' }[] }[];
 }
 
 const Hero: FC<HeroProps> = ({ text }) => {
+  const router = useRouter();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -61,6 +63,7 @@ const Hero: FC<HeroProps> = ({ text }) => {
         <IconButton
           variant="primaryGreen"
           size="large"
+          onClick={() => router.push('#event-highlight-section')}
           icon={<ShortArrowDown />}
         />
       </S.Hero>

@@ -24,7 +24,7 @@ export const ImageTextSection = styled.div<ImageTextSectionProps>`
     }
     p {
       font-size: 1.4em;
-      font-weight: 100;
+      font-weight: 200;
       line-height: 23px;
     }
   }

@@ -24,10 +24,7 @@ export const Navigation = styled.nav`
   }
 
   &.sticky .navigation__nav-logo {
-    width: 100px;
-    position: absolute;
-    left: 218px;
-    top: 40px;
+    width: 80px;
   }
 
   .navigation__nav-logo {
@@ -63,6 +60,12 @@ export const Navigation = styled.nav`
   .navigation__nav-items-list > li > a {
     padding: 7px 10px;
     display: block;
+    color: ${({ theme }) => theme.colors.grey200};
+  }
+
+  .navigation__nav-items-list > li > a:focus,
+  .navigation__nav-items-list > li > a:active {
+    color: ${({ theme }) => theme.colors.grey300};
   }
 
   .navigation__right-content-wrapper {

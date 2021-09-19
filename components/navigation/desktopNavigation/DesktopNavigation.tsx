@@ -1,4 +1,5 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
+import Link from 'next/link';
 
 // Types
 import { EventType } from '../../../types/EventType';
@@ -54,16 +55,24 @@ const Navigation: FC<NavigationProps> = ({
         />
         <ul className="navigation__nav-items-list">
           <li>
-            <a>Events</a>
+            <Link href="#event-highlight-section">
+              <a>Events</a>
+            </Link>
           </li>
           <li>
-            <a>Visie</a>
+            <Link href="#slider-section">
+              <a>Visie</a>
+            </Link>
           </li>
+          {/* <li>
+            <Link href="#event-highlight-section">
+              <a>Partners</a>
+            </Link>
+          </li> */}
           <li>
-            <a>Partners</a>
-          </li>
-          <li>
-            <a>Contact</a>
+            <Link href="#footer">
+              <a>Contact</a>
+            </Link>
           </li>
         </ul>
         <div className="navigation__right-content-wrapper">

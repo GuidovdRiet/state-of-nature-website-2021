@@ -14,7 +14,7 @@ interface SliderSectionProps {
 }
 
 const SliderSection: React.FC<SliderSectionProps> = ({ imageSlider }) => (
-  <S.SliderSection>
+  <S.SliderSection id="slider-section">
     <div className="slider-section__title-wrapper">
       <h3 className="slider-section__title">Een kijkje over de heuvels… </h3>
     </div>

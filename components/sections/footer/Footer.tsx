@@ -11,7 +11,7 @@ export interface FooterProps {}
 
 function Footer() {
   return (
-    <S.Footer>
+    <S.Footer id="footer">
       <SectionWrapper>
         <h2>Contact</h2>
         <h3>
