@@ -39,7 +39,7 @@ const Home: FC<HomeProps> = ({
   const desktopNavigationRef = useRef(null);
 
   function setIsScrolled() {
-    const navigation: HTMLElement = desktopNavigationRef.current;
+    const navigation: any = desktopNavigationRef.current;
     if (!navigation) return;
 
     const scrolledClassName = 'sticky';
