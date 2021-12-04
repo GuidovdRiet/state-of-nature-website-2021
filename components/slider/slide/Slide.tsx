@@ -4,6 +4,7 @@ import React, { ReactNode } from 'react';
 import * as S from './slide.style';
 
 interface SlideProps {
+  key: string;
   width: number;
   height: number;
   children: ReactNode[] | ReactNode;

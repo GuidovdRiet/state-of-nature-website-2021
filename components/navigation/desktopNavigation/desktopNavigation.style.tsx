@@ -4,27 +4,31 @@ export const Navigation = styled.nav`
   z-index: 9999;
 
   .navigation__wrapper {
-    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     max-width: 1283px;
     padding: 0 30px;
-    margin: 30px auto 0px auto;
+    margin: 0 auto;
+    padding-top: 20px;
   }
 
   &.sticky {
     background-color: ${({ theme }) => theme.colors.background};
-    position: sticky;
-    top: -30px;
-    padding: 10px 30px;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.grey100};
+    top: 0;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.gray[100]};
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 999;
     box-shadow: rgb(50 50 93 / 0%) 7px -2px 5px -1px,
       rgb(0 0 0 / 1%) 0px 1px 3px;
   }
 
   &.sticky .navigation__nav-logo {
-    width: 80px;
+    transform: scale(0.9);
+    transform-origin: top left;
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .navigation__nav-logo {
@@ -40,32 +44,35 @@ export const Navigation = styled.nav`
     margin-left: 42px;
   }
 
-  .navigation__nav-items-list > li {
+  .navigation__nav-items-list > li > a {
     margin: 0 25px;
-    font-size: 1.4em;
+    font-size: 2.3em;
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.grey200};
+    font-family: 'Londrina Solid';
     transition: background-color 0.1s ease-in;
     transition: border 0.1s ease-in;
     border: 1px solid transparent;
     border-radius: 5px;
     ${({ theme }) => theme.helpers.fontSmoothing};
+    background-color: ${({ theme }) => theme.colors.gray[100]};
   }
 
-  .navigation__nav-items-list > li:hover {
-    background-color: #fffdef;
-    border: 1px solid #e0d4c2;
+  .navigation__nav-items-list > li:hover a {
+    transition: background-color 0.1s ease-in, color 0.1s ease-in;
+    background-color: ${({ theme }) => theme.colors.gray[200]};
+    color: ${({ theme }) => theme.colors.gray[600]};
   }
 
   .navigation__nav-items-list > li > a {
     padding: 7px 10px;
     display: block;
-    color: ${({ theme }) => theme.colors.grey200};
+    color: ${({ theme }) => theme.colors.gray[500]};
   }
 
   .navigation__nav-items-list > li > a:focus,
   .navigation__nav-items-list > li > a:active {
-    color: ${({ theme }) => theme.colors.grey300};
+    background-color: ${({ theme }) => theme.colors.gray[200]};
+    color: ${({ theme }) => theme.colors.gray[600]};
   }
 
   .navigation__right-content-wrapper {

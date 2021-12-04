@@ -38,29 +38,21 @@ const Home: FC<HomeProps> = ({
 }) => {
   const desktopNavigationRef = useRef(null);
 
-  function setIsScrolled() {
-    const navigation: any = desktopNavigationRef.current;
-    if (!navigation) return;
-
-    const scrolledClassName = 'sticky';
-    const hasScrolledClassName = [...navigation.classList].includes(
-      scrolledClassName
-    );
-    const shouldHaveBs =
-      document.documentElement.scrollTop > navigation.offsetHeight / 4;
-
-    if (shouldHaveBs && !hasScrolledClassName)
-      navigation.classList.add(scrolledClassName);
-    else if (!shouldHaveBs && hasScrolledClassName)
-      navigation.classList.remove(scrolledClassName);
-  }
+  const isSticky = () => {
+    if (!desktopNavigationRef.current) return;
+    const navigation: HTMLElement = desktopNavigationRef.current;
+    const scrollTop = window.scrollY;
+    scrollTop >= 60
+      ? navigation.classList.add('sticky')
+      : navigation.classList.remove('sticky');
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', setIsScrolled);
+    window.addEventListener('scroll', isSticky);
     return () => {
-      window.removeEventListener('scroll', setIsScrolled);
+      window.removeEventListener('scroll', isSticky);
     };
-  }, []);
+  });
 
   return (
     <PageWrapper

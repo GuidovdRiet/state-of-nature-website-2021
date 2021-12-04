@@ -21,6 +21,7 @@ const SliderSection: React.FC<SliderSectionProps> = ({ imageSlider }) => (
     <Slider>
       {imageSlider.fields.slider.map((slide: any) => (
         <Slide
+          key={slide.fields.file.url}
           width={slide.fields.file.details.image.width}
           height={slide.fields.file.details.image.height}
         >

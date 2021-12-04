@@ -36,8 +36,8 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
     <SectionWrapper>
       <S.ImageTextSection alignTextLeft={data.alignTextLeft}>
         <div className="image-text-section__text-wrapper">
-          {data.text.content.map((content: Content) => (
-            <>{getTextContent(content)}</>
+          {data.text.content.map((content: Content, index: number) => (
+            <div key={index}>{getTextContent(content)}</div>
           ))}
           {data.button?.fields && data.button_second?.fields && (
             <div className="image-text-section__button-wrapper">

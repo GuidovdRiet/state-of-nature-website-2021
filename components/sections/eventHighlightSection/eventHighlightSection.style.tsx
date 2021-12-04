@@ -25,13 +25,13 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
   }
 
   .event-highlight-section__status {
-    background-color: ${({ theme }) => theme.colors.grey100};
+    background-color: ${({ theme }) => theme.colors.gray[100]};
     display: inline-block;
     padding: 8px 10px;
     font-size: 2.2em;
     font-family: 'Londrina Solid';
     font-weight: 500;
-    color: ${({ theme }) => theme.colors.grey400};
+    color: ${({ theme }) => theme.colors.gray[700]};
     ${({ theme }) => theme.helpers.fontSmoothing};
   }
 

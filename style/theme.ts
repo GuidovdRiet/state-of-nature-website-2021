@@ -1,5 +1,18 @@
 import { Theme } from '@emotion/react';
 
+export const gray = {
+  50: '#F9FAFB',
+  100: '#F3F4F6',
+  200: '#E5E7EB',
+  300: '#D1D5DB',
+  400: '#9CA3AF',
+  500: '#6B7280',
+  600: '#4B5563',
+  700: '#374151',
+  800: '#1F2937',
+  900: '#111827',
+};
+
 const theme: Theme = {
   colors: {
     primaryOrange: '#F5764B',
@@ -7,10 +20,7 @@ const theme: Theme = {
     primaryPurple: '#1D184A',
     primaryGreen: '#519B59',
 
-    grey100: '#D8D8D8',
-    grey200: '#6B6B6B',
-    grey300: '#424141',
-    grey400: '#323232',
+    gray,
 
     background: '#fbfaef',
 
