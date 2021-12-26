@@ -43,7 +43,7 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
   .event-highlight-section__title {
     color: ${({ theme }) => theme.colors.white};
     font-size: 3.72em;
-    font-weight: 100;
+    font-weight: 200;
     line-height: 1.55em;
     ${({ theme }) => theme.helpers.fontSmoothing};
     font-weight: 500;

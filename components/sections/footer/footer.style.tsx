@@ -12,7 +12,7 @@ export const Footer = styled.footer`
 
   h3 {
     a {
-      font-weight: 100;
+      font-weight: 200;
       font-size: 2.7em;
       margin-bottom: 0px;
       color: ${({ theme }) => theme.colors.black};

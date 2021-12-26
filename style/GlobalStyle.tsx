@@ -1,10 +1,6 @@
 import React from 'react';
 import normalize from 'emotion-normalize';
 
-// Font Faces
-import londrinaSolidFontFace from './fontFaces/londrinaSolidFontFace';
-import sourceSansProFontFace from './fontFaces/sourceSansProFontFace';
-
 import { css, Global, useTheme } from '@emotion/react';
 
 const GlobalStyle = () => {
@@ -13,8 +9,6 @@ const GlobalStyle = () => {
     <Global
       styles={css`
         ${normalize}
-        ${londrinaSolidFontFace},
-        ${sourceSansProFontFace},
 
         body {
           margin: 0;
@@ -57,6 +51,7 @@ const GlobalStyle = () => {
         h3 {
           font-family: 'Londrina Solid', sans-serif;
           font-weight: 400;
+          font-size: 3.8em;
         }
 
         /*  Reset margins on paragraphs
@@ -65,6 +60,9 @@ const GlobalStyle = () => {
         p {
           margin-top: 0;
           margin-bottom: 1em;
+          font-size: 20px;
+          font-weight: 200;
+          line-height: 26px;
         }
 
         p,

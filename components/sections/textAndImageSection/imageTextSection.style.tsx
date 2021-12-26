@@ -19,13 +19,8 @@ export const ImageTextSection = styled.div<ImageTextSectionProps>`
     }
     h3 {
       font-size: 2em;
-      font-weight: 100;
+      font-weight: 300;
       font-family: 'Source Sans Pro';
-    }
-    p {
-      font-size: 1.4em;
-      font-weight: 200;
-      line-height: 23px;
     }
   }
   .image-text-section__button-wrapper {
