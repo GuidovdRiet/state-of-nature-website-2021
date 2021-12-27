@@ -1,9 +1,6 @@
 import React, { ReactNode } from 'react';
-import Slider from 'react-slick';
 
 // style
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import * as S from './slider.style';
 
 export default function SimpleSlider({
@@ -11,21 +8,26 @@ export default function SimpleSlider({
 }: {
   children: ReactNode[] | ReactNode;
 }) {
-  const settings = {
-    infinite: true,
-    speed: 600,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    centerMode: true,
-    arrows: false,
-    cssEase: 'linear',
-    variableWidth: true,
-    focusOnSelect: true,
+  const flickityOptions = {
+    freeScroll: true,
+    contain: true,
+    prevNextButtons: false,
+    pageDots: false,
+    wrapAround: true,
+    groupCells: 4,
   };
 
   return (
-    <S.SliderWrapper>
-      <Slider {...settings}>{children}</Slider>
+    <S.SliderWrapper
+      options={flickityOptions}
+      on={
+        ('ready',
+        () => {
+          console.log('hit!');
+        })
+      }
+    >
+      {children}
     </S.SliderWrapper>
   );
 }

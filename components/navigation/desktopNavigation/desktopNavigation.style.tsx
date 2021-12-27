@@ -47,14 +47,13 @@ export const Navigation = styled.nav`
   .navigation__nav-items-list > li > a {
     margin: 0 25px;
     font-size: 2.3em;
-    font-weight: 600;
+    font-weight: 400;
     font-family: 'Londrina Solid';
     transition: background-color 0.1s ease-in;
     transition: border 0.1s ease-in;
     border: 1px solid transparent;
     border-radius: 5px;
     ${({ theme }) => theme.helpers.fontSmoothing};
-    background-color: ${({ theme }) => theme.colors.gray[100]};
   }
 
   .navigation__nav-items-list > li:hover a {

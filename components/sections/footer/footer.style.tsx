@@ -11,11 +11,15 @@ export const Footer = styled.footer`
   }
 
   h3 {
+    font-weight: 300;
+    margin-bottom: 10px;
     a {
-      font-weight: 200;
-      font-size: 2.7em;
       margin-bottom: 0px;
       color: ${({ theme }) => theme.colors.black};
     }
+  }
+
+  h3:last-child {
+    margin-bottom: 0;
   }
 `;

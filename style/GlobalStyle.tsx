@@ -45,7 +45,7 @@ const GlobalStyle = () => {
         h1,
         h2 {
           font-family: 'Londrina Solid', sans-serif;
-          font-weight: 900;
+          font-weight: 400;
         }
 
         h3 {

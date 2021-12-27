@@ -30,7 +30,7 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
     padding: 8px 10px;
     font-size: 2.2em;
     font-family: 'Londrina Solid';
-    font-weight: 500;
+    font-weight: 400;
     color: ${({ theme }) => theme.colors.gray[700]};
     ${({ theme }) => theme.helpers.fontSmoothing};
   }
@@ -43,10 +43,9 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
   .event-highlight-section__title {
     color: ${({ theme }) => theme.colors.white};
     font-size: 3.72em;
-    font-weight: 200;
     line-height: 1.55em;
     ${({ theme }) => theme.helpers.fontSmoothing};
-    font-weight: 500;
+    font-weight: 400;
     display: inline;
     padding: 5px 0px;
 

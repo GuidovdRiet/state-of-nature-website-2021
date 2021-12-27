@@ -58,7 +58,7 @@ interface ButtonProps {
 
 export const Button = styled(motion.button)<ButtonProps>`
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   cursor: pointer;
   display: flex;
@@ -67,10 +67,8 @@ export const Button = styled(motion.button)<ButtonProps>`
   border: 0;
   color: ${({ theme }) => theme.colors.white};
   font-family: 'Londrina Solid';
-  font-weight: 300;
   ${({ theme }) => theme.helpers.fontSmoothing};
   position: relative;
-  font-weight: 500;
 
   /* Color variants */
   ${({ theme }) =>
