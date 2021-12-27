@@ -40,11 +40,11 @@ export interface NavigationProps {
   forwardRef: React.MutableRefObject<null>;
 }
 
-const Navigation: FC<NavigationProps> = ({
+function Navigation({
   upcomingEvent,
   navigationData,
   forwardRef,
-}) => {
+}: NavigationProps) {
   return (
     <S.Navigation ref={forwardRef}>
       <div className="navigation__wrapper">
@@ -100,6 +100,6 @@ const Navigation: FC<NavigationProps> = ({
       </div>
     </S.Navigation>
   );
-};
+}
 
 export default Navigation;

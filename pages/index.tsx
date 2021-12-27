@@ -42,9 +42,11 @@ const Home: FC<HomeProps> = ({
     if (!desktopNavigationRef.current) return;
     const navigation: HTMLElement = desktopNavigationRef.current;
     const scrollTop = window.scrollY;
-    scrollTop >= 60
-      ? navigation.classList.add('sticky')
-      : navigation.classList.remove('sticky');
+    if (scrollTop >= 60) {
+      navigation.classList.add('sticky');
+    } else {
+      navigation.classList.remove('sticky');
+    }
   };
 
   useEffect(() => {
