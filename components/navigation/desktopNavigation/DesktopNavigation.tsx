@@ -64,11 +64,6 @@ const Navigation: FC<NavigationProps> = ({
               <a>Visie</a>
             </Link>
           </li>
-          {/* <li>
-            <Link href="#event-highlight-section">
-              <a>Partners</a>
-            </Link>
-          </li> */}
           <li>
             <Link href="#footer">
               <a>Contact</a>

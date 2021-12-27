@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 
 // Style
-import { buttons } from 'polished';
 import * as S from './imageTextSection.style';
 
 // Type

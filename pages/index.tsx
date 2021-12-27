@@ -31,7 +31,7 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({
-  data: { title, hero, imageSlider, textAndImage, textAndImage2, contact },
+  data: { title, hero, imageSlider, textAndImage, textAndImage2 },
   events,
   navigationData,
   upcomingEvent,
