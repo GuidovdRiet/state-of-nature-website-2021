@@ -18,16 +18,6 @@ export default function SimpleSlider({
   };
 
   return (
-    <S.SliderWrapper
-      options={flickityOptions}
-      on={
-        ('ready',
-        () => {
-          console.log('hit!');
-        })
-      }
-    >
-      {children}
-    </S.SliderWrapper>
+    <S.SliderWrapper options={flickityOptions}>{children}</S.SliderWrapper>
   );
 }
