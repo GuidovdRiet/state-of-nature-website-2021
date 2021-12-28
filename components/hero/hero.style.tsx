@@ -5,7 +5,7 @@ export const Hero = styled.section`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 110px;
+  margin-top: 200px;
   position: relative;
 
   .hero__text {

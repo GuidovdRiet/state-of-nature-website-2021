@@ -13,19 +13,26 @@ export const Navigation = styled.nav`
     padding-top: 20px;
   }
 
-  &.sticky {
+  background-color: transparent;
+  top: 0;
+  border-bottom: 1px solid transparent;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  &.scrolled {
     background-color: ${({ theme }) => theme.colors.background};
-    top: 0;
     border-bottom: 1px solid ${({ theme }) => theme.colors.gray[100]};
-    position: fixed;
-    left: 0;
-    width: 100%;
-    z-index: 999;
     box-shadow: rgb(50 50 93 / 0%) 7px -2px 5px -1px,
       rgb(0 0 0 / 1%) 0px 1px 3px;
   }
 
-  &.sticky .navigation__nav-logo {
+  &.hidden {
+    display: none;
+  }
+
+  .navigation__nav-logo {
     transform: scale(0.9);
     transform-origin: top left;
     transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,9 +75,7 @@ export const Navigation = styled.nav`
     color: ${({ theme }) => theme.colors.gray[500]};
   }
 
-  .navigation__nav-items-list > li > a:focus,
   .navigation__nav-items-list > li > a:active {
-    background-color: ${({ theme }) => theme.colors.gray[200]};
     color: ${({ theme }) => theme.colors.gray[600]};
   }
 

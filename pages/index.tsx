@@ -37,22 +37,32 @@ const Home: FC<HomeProps> = ({
   upcomingEvent,
 }) => {
   const desktopNavigationRef = useRef(null);
+  const [showCollabPopup, setShowCollabPopup] = React.useState(false);
+  let lastScrollY = useRef(0);
 
-  const isSticky = () => {
+  const scrollHandler = () => {
     if (!desktopNavigationRef.current) return;
     const navigation: HTMLElement = desktopNavigationRef.current;
-    const scrollTop = window.scrollY;
-    if (scrollTop >= 60) {
-      navigation.classList.add('sticky');
+
+    if (lastScrollY.current >= 60) {
+      navigation.classList.add('scrolled');
     } else {
-      navigation.classList.remove('sticky');
+      navigation.classList.remove('scrolled');
     }
+
+    if (lastScrollY.current < window.scrollY) {
+      navigation.classList.add('hidden');
+    } else {
+      navigation.classList.remove('hidden');
+    }
+
+    lastScrollY.current = window.scrollY;
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', isSticky);
+    window.addEventListener('scroll', scrollHandler);
     return () => {
-      window.removeEventListener('scroll', isSticky);
+      window.removeEventListener('scroll', scrollHandler);
     };
   });
 
@@ -71,8 +81,14 @@ const Home: FC<HomeProps> = ({
       <EventHighlightSection event={upcomingEvent || events[0]} />
       <SliderSection imageSlider={imageSlider} />
       <ImageTextSection data={textAndImage.fields} />
-      <ImageTextSection data={textAndImage2.fields} />
-      <Footer />
+      <ImageTextSection
+        data={textAndImage2.fields}
+        setShowCollabPopup={setShowCollabPopup}
+      />
+      <Footer
+        showAsPopup={showCollabPopup}
+        setShowAsPopup={setShowCollabPopup}
+      />
     </PageWrapper>
   );
 };

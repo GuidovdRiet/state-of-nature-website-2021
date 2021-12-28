@@ -7,7 +7,7 @@ interface SectionWrapperProps {
   children: ReactNode;
 }
 
-const SectionWrapper: FC<SectionWrapperProps> = ({ children }) => (
+const SectionWrapper: FC<SectionWrapperProps> = ({ children, fullScreen }) => (
   <S.Wrapper>{children}</S.Wrapper>
 );
 

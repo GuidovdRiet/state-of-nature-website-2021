@@ -23,6 +23,10 @@ const GlobalStyle = () => {
           font-size: 13px;
         }
 
+        html:focus-within {
+          scroll-behavior: smooth;
+        }
+
         body,
         p,
         button,

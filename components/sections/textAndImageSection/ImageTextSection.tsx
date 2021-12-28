@@ -15,9 +15,10 @@ import { contentfulLoader } from '../eventHighlightSection/EventHighlightSection
 
 export interface ImageTextSectionProps {
   data: ImageTextSectionDataType;
+  setShowCollabPopup?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function ImageTextSection({ data }: ImageTextSectionProps) {
+function ImageTextSection({ data, setShowCollabPopup }: ImageTextSectionProps) {
   function getTextContent(content: Content) {
     switch (content.nodeType) {
       case 'heading-2':
@@ -47,6 +48,7 @@ function ImageTextSection({ data }: ImageTextSectionProps) {
               />
               <Button
                 text={data.button_second?.fields.text}
+                onClick={() => setShowCollabPopup && setShowCollabPopup(true)}
                 variant="primaryGreen"
                 arrow={<LongArrowRightIcon />}
               />

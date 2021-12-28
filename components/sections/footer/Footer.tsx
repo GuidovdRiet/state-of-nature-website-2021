@@ -7,11 +7,14 @@ import * as S from './footer.style';
 // Components
 import SectionWrapper from '../../wrappers/sectionWrapper/SectionWrapper';
 
-export interface FooterProps {}
+export interface FooterProps {
+  showAsPopup: boolean;
+  setShowAsPopup: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-function Footer() {
+function Footer({ showAsPopup, setShowAsPopup }: FooterProps) {
   return (
-    <S.Footer id="footer">
+    <S.Footer id="footer" showAsPopup={showAsPopup}>
       <SectionWrapper>
         <h2>Contact</h2>
         <h3>
@@ -22,6 +25,9 @@ function Footer() {
             info@ourstateofnature.com
           </a>
         </h3>
+        {showAsPopup && (
+          <button onClick={() => setShowAsPopup(!showAsPopup)}>X</button>
+        )}
       </SectionWrapper>
     </S.Footer>
   );
