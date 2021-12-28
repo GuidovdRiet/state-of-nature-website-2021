@@ -9,6 +9,7 @@ export const Footer = styled.footer<FooterProps>`
   background-color: ${({ theme }) => theme.colors.primaryYellow};
   margin-top: 180px;
   padding: 90px 0;
+  position: relative;
 
   ${({ showAsPopup }) =>
     showAsPopup &&
@@ -37,5 +38,16 @@ export const Footer = styled.footer<FooterProps>`
 
   h3:last-child {
     margin-bottom: 0;
+  }
+
+  .footer__close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 `;

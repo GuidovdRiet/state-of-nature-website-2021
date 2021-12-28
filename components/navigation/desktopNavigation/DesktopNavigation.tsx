@@ -11,6 +11,7 @@ import Button from '../../buttons/button/Button';
 
 // Style
 import * as S from './desktopNavigation.style';
+import { motion } from 'framer-motion';
 
 interface NavigationType {
   sys: {
@@ -56,17 +57,17 @@ function Navigation({
         <ul className="navigation__nav-items-list">
           <li>
             <Link href="#event-highlight-section">
-              <a>Events</a>
+              <motion.a whileTap={{ scale: 0.92 }}>Events</motion.a>
             </Link>
           </li>
           <li>
             <Link href="#slider-section">
-              <a>Visie</a>
+              <motion.a whileTap={{ scale: 0.92 }}>Visie</motion.a>
             </Link>
           </li>
           <li>
             <Link href="#footer">
-              <a>Contact</a>
+              <motion.a whileTap={{ scale: 0.92 }}>Contact</motion.a>
             </Link>
           </li>
         </ul>
