@@ -1,12 +1,12 @@
 // Style
 import React from 'react';
+import { motion } from 'framer-motion';
 
 // Style
 import * as S from './footer.style';
 
 // Components
 import SectionWrapper from '../../wrappers/sectionWrapper/SectionWrapper';
-import { motion } from 'framer-motion';
 
 export interface FooterProps {
   showAsPopup: boolean;

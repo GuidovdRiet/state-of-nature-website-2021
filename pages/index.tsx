@@ -38,7 +38,7 @@ const Home: FC<HomeProps> = ({
 }) => {
   const desktopNavigationRef = useRef(null);
   const [showCollabPopup, setShowCollabPopup] = React.useState(false);
-  let lastScrollY = useRef(0);
+  const lastScrollY = useRef(0);
 
   const scrollHandler = () => {
     if (!desktopNavigationRef.current) return;

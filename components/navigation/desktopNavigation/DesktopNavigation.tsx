@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 // Types
 import { EventType } from '../../../types/EventType';
@@ -11,7 +12,6 @@ import Button from '../../buttons/button/Button';
 
 // Style
 import * as S from './desktopNavigation.style';
-import { motion } from 'framer-motion';
 
 interface NavigationType {
   sys: {
