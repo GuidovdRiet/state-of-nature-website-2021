@@ -21,9 +21,6 @@ const GlobalStyle = () => {
         html {
           font-family: 'Source Sans Pro', sans-serif;
           font-size: 13px;
-        }
-
-        html:focus-within {
           scroll-behavior: smooth;
         }
 

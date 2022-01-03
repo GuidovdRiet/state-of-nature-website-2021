@@ -30,12 +30,15 @@ declare module '@emotion/react' {
       red500: string;
       purple300: string;
     };
-    breakPoints: {
-      extraSmall: string;
-      small: string;
-      medium: string;
-      large: string;
-      extraLarge: string;
+    mediaQueries: {
+      extraSmallUp: string;
+      extraSmallDown: string;
+      smallUp: string;
+      smallDown: string;
+      mediumUp: string;
+      mediumDown: string;
+      largeUp: string;
+      largeDown: string;
     };
     helpers: {
       fontSmoothing: string;

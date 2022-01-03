@@ -13,6 +13,13 @@ export const gray = {
   900: '#111827',
 };
 
+const breakpoints = {
+  extraSmall: 575.98,
+  small: 767.98,
+  medium: 991.98,
+  large: 1199.98,
+};
+
 const theme: Theme = {
   colors: {
     primaryOrange: '#F5764B',
@@ -33,17 +40,19 @@ const theme: Theme = {
 
     purple300: '#383478',
   },
-  breakPoints: {
-    // Extra small devices (portrait phones)
-    extraSmall: '575.98px',
-    // Small devices (landscape phones)
-    small: '767.98px',
-    // Medium devices (tablets)
-    medium: '991.98px',
-    // Large devices (desktops)
-    large: '1199.98px',
-    // maxWidth screen
-    extraLarge: '1283px',
+  mediaQueries: {
+    // 575.98px: extra small devices (phones, portrait phones)
+    extraSmallUp: `@media screen and (min-width: ${breakpoints.extraSmall}px)`,
+    extraSmallDown: `@media screen and (max-width: ${breakpoints.extraSmall}px)`,
+    // 767.98px: small devices (landscape phones)
+    smallUp: `@media screen and (min-width: ${breakpoints.small}px)`,
+    smallDown: `@media screen and (max-width: ${breakpoints.small}px)`,
+    // 991.98px: medium devices (tablets)
+    mediumUp: `@media screen and (min-width: ${breakpoints.medium}px)`,
+    mediumDown: `@media screen and (max-width: ${breakpoints.medium}px)`,
+    // 1199.98px: large devices (desktops)
+    largeUp: `@media screen and (min-width: ${breakpoints.large}px)`,
+    largeDown: `@media screen and (max-width: ${breakpoints.large}px)`,
   },
   helpers: {
     fontSmoothing: `

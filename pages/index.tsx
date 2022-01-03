@@ -14,7 +14,7 @@ import Footer from '../components/sections/footer/Footer';
 // Types
 import { EventType } from '../types/EventType';
 import { HeroSectionType } from '../types/sectionTypes/HeroSectionType';
-import Navigation from '../components/navigation/desktopNavigation/DesktopNavigation';
+import DesktopNavigation from '../components/navigation/desktopNavigation/DesktopNavigation';
 
 interface HomeProps {
   data: {
@@ -70,7 +70,7 @@ const Home: FC<HomeProps> = ({
     <PageWrapper
       head={<Head title={title} />}
       navigation={
-        <Navigation
+        <DesktopNavigation
           upcomingEvent={upcomingEvent}
           navigationData={navigationData}
           forwardRef={desktopNavigationRef}
