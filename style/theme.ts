@@ -13,11 +13,12 @@ export const gray = {
   900: '#111827',
 };
 
-const breakpoints = {
+export const breakpoints = {
   extraSmall: 575.98,
   small: 767.98,
   medium: 991.98,
   large: 1199.98,
+  extraLarge: 1282.98,
 };
 
 const theme: Theme = {
@@ -53,6 +54,9 @@ const theme: Theme = {
     // 1199.98px: large devices (desktops)
     largeUp: `@media screen and (min-width: ${breakpoints.large}px)`,
     largeDown: `@media screen and (max-width: ${breakpoints.large}px)`,
+    // 1282.98px: large devices (desktops)
+    extraLargeUp: `@media screen and (min-width: ${breakpoints.extraLarge}px)`,
+    extraLargeDown: `@media screen and (max-width: ${breakpoints.extraLarge}px)`,
   },
   helpers: {
     fontSmoothing: `

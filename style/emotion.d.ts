@@ -39,6 +39,8 @@ declare module '@emotion/react' {
       mediumDown: string;
       largeUp: string;
       largeDown: string;
+      extraLargeUp: string;
+      extraLargeDown: string;
     };
     helpers: {
       fontSmoothing: string;
