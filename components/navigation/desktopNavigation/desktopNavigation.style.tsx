@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { breakpoints } from '../../../style/theme';
 
 export const Navigation = styled.nav`
   z-index: 9999;
@@ -7,7 +8,7 @@ export const Navigation = styled.nav`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    max-width: 1283px;
+    max-width: ${`${breakpoints.extraLarge}px`};
     padding: 0 30px;
     margin: 0 auto;
     padding-top: 20px;
