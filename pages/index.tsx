@@ -1,8 +1,9 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { compareDesc, isFuture } from 'date-fns';
+
+import useViewport from '../hooks/useViewport';
+import { breakpoints } from '../style/theme';
 import { fetchContentType, fetchEntry } from '../util/contentfulPosts';
-import { breakpoints } from 'style/theme';
-import useViewport from 'hooks/useViewport';
 
 // Components
 import Head from '../components/head';
