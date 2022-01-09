@@ -12,4 +12,10 @@ export const SliderSection = styled.section`
     font-size: 7em;
     text-align: left;
   }
+
+  ${({ theme }) => theme.mediaQueries.extraSmallDown} {
+    .slider-section__title {
+      font-size: 4em;
+    }
+  }
 `;

@@ -37,4 +37,18 @@ export const ImageTextSection = styled.div<ImageTextSectionProps>`
     justify-content: center;
     align-items: center;
   }
+  ${({ theme }) => theme.mediaQueries.extraSmallDown} {
+    margin-top: 50px;
+    flex-direction: column;
+
+    .image-text-section__text-wrapper {
+      width: 100%;
+      margin: 0;
+    }
+
+    .image-text-section__image-wrapper {
+      width: 85%;
+      margin: 30px;
+    }
+  }
 `;

@@ -50,4 +50,8 @@ export const Footer = styled.footer<FooterProps>`
     border: none;
     cursor: pointer;
   }
+
+  ${({ theme }) => theme.mediaQueries.extraSmallDown} {
+    margin-top: 10px;
+  }
 `;

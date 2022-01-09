@@ -81,4 +81,27 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
     width: 550px;
     margin-left: 10px;
   }
+
+  ${({ theme }) => theme.mediaQueries.extraSmallDown} {
+    padding: 29px 23px;
+    flex-direction: column;
+    margin: 35px 0;
+
+    .event-highlight-section__status {
+      font-size: 1.6em;
+    }
+
+    .event-highlight-section__title {
+      font-size: 2.72em;
+    }
+    .event-highlight-section__illustration-wrapper {
+      width: 90%;
+    }
+
+    .event-highlight-section__image-wrapper {
+      width: 269px;
+      margin-left: 0px;
+      margin-top: 25px;
+    }
+  }
 `;

@@ -15,4 +15,10 @@ export const SliderWrapper = styled(Flickity)`
     display: flex;
     align-items: center;
   }
+
+  ${({ theme }) => theme.mediaQueries.extraSmallDown} {
+    img {
+      width: 60%;
+    }
+  }
 `;

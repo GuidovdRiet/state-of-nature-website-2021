@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Hero = styled.section`
+export const Hero = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -51,5 +51,43 @@ export const Hero = styled.section`
     width: 85px;
     bottom: -66px;
     right: 101px;
+  }
+
+  @media (min-width: 1600px) {
+    .hero__text {
+      font-size: 10.2em;
+      max-width: 1200px;
+    }
+  }
+
+  ${({ theme }) => theme.mediaQueries.extraSmallDown} {
+    margin-top: 140px;
+
+    .hero__text {
+      font-size: 4em;
+      margin-bottom: 25px;
+    }
+
+    .hero__shape--scalene-triangle-right {
+      top: -61px;
+      right: 271px;
+    }
+
+    .css-8sux6p .hero__shape--square {
+      top: -87px;
+      left: 231px;
+    }
+
+    .hero__shape--scalene-triangle-left {
+      width: 61px;
+      bottom: 27px;
+      left: 216px;
+    }
+
+    .hero__shape--triangle {
+      right: 231px;
+      bottom: 34px;
+      width: 45px;
+    }
   }
 `;
