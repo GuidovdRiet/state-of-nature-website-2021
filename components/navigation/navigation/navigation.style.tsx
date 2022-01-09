@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { breakpoints } from '../../../style/theme';
 
@@ -98,5 +99,62 @@ export const Navigation = styled.nav`
   .navigation__social-icon-facebook {
     width: 13px;
     margin-right: 15px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.extraSmallDown} {
+    button {
+      font-size: 1.3em;
+      padding: 7px 6px;
+    }
+
+    .navigation__wrapper {
+      padding: 0 13px;
+      padding-top: 8px;
+      background-color: ${({ theme }) => theme.colors.background};
+    }
+
+    .navigation__nav-logo {
+      width: 80px;
+    }
+
+    .navigation__nav-items-list {
+      width: 200px;
+      overflow: scroll;
+      margin: 0 10px 0 0;
+      justify-content: flex-start;
+    }
+
+    .navigation__nav-items-list > li > a {
+      margin: 0 3px;
+      font-size: 1.4em;
+      font-weight: 400;
+      padding: 4px 3px;
+    }
+
+    .navigation__nav-items-list > li {
+      margin: 0;
+      font-size: 12px;
+      list-style-type: none;
+      width: 100px;
+    }
+
+    .navigation__social-wrapper {
+      margin-right: 10px;
+      align-items: center;
+    }
+
+    .navigation__social-wrapper > a {
+      display: flex;
+      align-items: center;
+    }
+
+    .navigation__social-icon-instagram {
+      width: 21px;
+    }
+
+    .navigation__social-icon-facebook {
+      width: 9px;
+      margin-right: 9px;
+    }
   }
 `;

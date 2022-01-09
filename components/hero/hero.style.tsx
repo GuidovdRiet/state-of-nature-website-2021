@@ -61,7 +61,7 @@ export const Hero = styled.div`
   }
 
   ${({ theme }) => theme.mediaQueries.extraSmallDown} {
-    margin-top: 140px;
+    margin-top: 90px;
 
     .hero__text {
       font-size: 4em;

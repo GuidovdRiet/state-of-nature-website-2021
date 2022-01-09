@@ -14,7 +14,9 @@ import Footer from '../components/sections/footer/Footer';
 // Types
 import { EventType } from '../types/EventType';
 import { HeroSectionType } from '../types/sectionTypes/HeroSectionType';
-import DesktopNavigation from '../components/navigation/desktopNavigation/DesktopNavigation';
+import Navigation from '../components/navigation/navigation/Navigation';
+import { breakpoints } from 'style/theme';
+import useViewport from 'hooks/useViewport';
 
 interface HomeProps {
   data: {
@@ -36,15 +38,18 @@ const Home: FC<HomeProps> = ({
   navigationData,
   upcomingEvent,
 }) => {
-  const desktopNavigationRef = useRef(null);
+  const navigationRef = useRef(null);
   const [showCollabPopup, setShowCollabPopup] = React.useState(false);
   const lastScrollY = useRef(0);
+  const { width } = useViewport();
+  const breakpointHideNavigation = breakpoints.extraSmall;
 
   const scrollHandler = () => {
-    if (!desktopNavigationRef.current) return;
-    const navigation: HTMLElement = desktopNavigationRef.current;
+    if (width < breakpointHideNavigation) return;
+    if (!navigationRef.current) return;
+    const navigation: HTMLElement = navigationRef.current;
 
-    if (lastScrollY.current >= 60) {
+    if (lastScrollY.current >= 90) {
       navigation.classList.add('scrolled');
     } else {
       navigation.classList.remove('scrolled');
@@ -70,10 +75,10 @@ const Home: FC<HomeProps> = ({
     <PageWrapper
       head={<Head title={title} />}
       navigation={
-        <DesktopNavigation
+        <Navigation
           upcomingEvent={upcomingEvent}
           navigationData={navigationData}
-          forwardRef={desktopNavigationRef}
+          forwardRef={navigationRef}
         />
       }
     >

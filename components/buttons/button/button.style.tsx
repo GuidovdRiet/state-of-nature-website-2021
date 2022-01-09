@@ -93,6 +93,7 @@ export const Button = styled(motion.button)<ButtonProps>`
     margin: 2px 0 0 10px;
     svg {
       width: 25px;
+      height: 25px;
     }
   }
 `;

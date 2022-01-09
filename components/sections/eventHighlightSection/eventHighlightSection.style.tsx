@@ -74,7 +74,7 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
     width: 100%;
     max-width: 440px;
     max-height: 550px;
-    transform: translate3d(-15px, -31px, 11px);
+    transform: translate3d(-15px, -31px, 0px);
   }
 
   .event-highlight-section__image-wrapper {
@@ -83,8 +83,8 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
   }
 
   ${({ theme }) => theme.mediaQueries.extraSmallDown} {
-    padding: 29px 23px;
-    flex-direction: column;
+    padding: 23px 23px 36px 23px;
+    flex-direction: column-reverse;
     margin: 35px 0;
 
     .event-highlight-section__status {
@@ -99,9 +99,9 @@ export const EventHighlightSection = styled.div<EventHighlightSectionProps>`
     }
 
     .event-highlight-section__image-wrapper {
-      width: 269px;
+      width: 304px;
       margin-left: 0px;
-      margin-top: 25px;
+      margin-bottom: 25px;
     }
   }
 `;

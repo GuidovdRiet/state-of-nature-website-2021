@@ -53,5 +53,13 @@ export const Footer = styled.footer<FooterProps>`
 
   ${({ theme }) => theme.mediaQueries.extraSmallDown} {
     margin-top: 10px;
+
+    h2 {
+      font-size: 4.4em;
+    }
+
+    h3 {
+      font-size: 2.2em;
+    }
   }
 `;

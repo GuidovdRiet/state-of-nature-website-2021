@@ -38,12 +38,16 @@ export const ImageTextSection = styled.div<ImageTextSectionProps>`
     align-items: center;
   }
   ${({ theme }) => theme.mediaQueries.extraSmallDown} {
-    margin-top: 50px;
-    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 57px;
+    flex-direction: column-reverse;
 
     .image-text-section__text-wrapper {
       width: 100%;
       margin: 0;
+      h2 {
+        font-size: 3em;
+      }
     }
 
     .image-text-section__image-wrapper {

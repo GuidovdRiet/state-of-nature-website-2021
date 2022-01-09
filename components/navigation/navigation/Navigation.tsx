@@ -11,7 +11,7 @@ import FacebookIcon from '../../media/icons/socials/FacebookIcon';
 import Button from '../../buttons/button/Button';
 
 // Style
-import * as S from './desktopNavigation.style';
+import * as S from './navigation.style';
 import { useRouter } from 'next/router';
 
 interface NavigationType {
