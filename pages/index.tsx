@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { compareDesc, isFuture } from 'date-fns';
 import { fetchContentType, fetchEntry } from '../util/contentfulPosts';
+import { breakpoints } from 'style/theme';
+import useViewport from 'hooks/useViewport';
 
 // Components
 import Head from '../components/head';
@@ -15,8 +17,6 @@ import Footer from '../components/sections/footer/Footer';
 import { EventType } from '../types/EventType';
 import { HeroSectionType } from '../types/sectionTypes/HeroSectionType';
 import Navigation from '../components/navigation/navigation/Navigation';
-import { breakpoints } from 'style/theme';
-import useViewport from 'hooks/useViewport';
 
 interface HomeProps {
   data: {

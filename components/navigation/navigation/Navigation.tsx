@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 // Types
 import { EventType } from '../../../types/EventType';
@@ -12,7 +13,6 @@ import Button from '../../buttons/button/Button';
 
 // Style
 import * as S from './navigation.style';
-import { useRouter } from 'next/router';
 
 interface NavigationType {
   sys: {

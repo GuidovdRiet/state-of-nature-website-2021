@@ -1,6 +1,7 @@
 import { isFuture } from 'date-fns';
 import React, { ReactElement } from 'react';
 import Image, { ImageLoaderProps } from 'next/image';
+import router from 'next/router';
 
 // Components
 import LongArrowRightIcon from '../../media/icons/arrows/LongArrowRightIcon';
@@ -12,7 +13,6 @@ import { EventType } from '../../../types/EventType';
 
 // Style
 import * as S from './eventHighlightSection.style';
-import router from 'next/router';
 
 interface EventHighlightSectionProps {
   event: EventType | undefined;
