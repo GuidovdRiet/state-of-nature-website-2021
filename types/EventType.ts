@@ -92,5 +92,6 @@ export interface EventType {
     date: string;
     location: { lon: number; lat: number };
     buttonText: string;
+    buttonLink: string;
   };
 }

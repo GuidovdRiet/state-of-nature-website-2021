@@ -12,6 +12,7 @@ import { EventType } from '../../../types/EventType';
 
 // Style
 import * as S from './eventHighlightSection.style';
+import router from 'next/router';
 
 interface EventHighlightSectionProps {
   event: EventType | undefined;
@@ -49,6 +50,7 @@ export default function EventHighlightSection({
             <div className="event-highlight-section__button-wrapper">
               <Button
                 text={fields.buttonText}
+                onClick={() => router.push(fields.buttonLink)}
                 variant="primaryGreen"
                 arrow={<LongArrowRightIcon />}
               />
