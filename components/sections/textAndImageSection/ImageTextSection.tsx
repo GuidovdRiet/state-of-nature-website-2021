@@ -41,11 +41,11 @@ function ImageTextSection({ data, setShowCollabPopup }: ImageTextSectionProps) {
           ))}
           {data.button?.fields && data.button_second?.fields && (
             <div className="image-text-section__button-wrapper">
-              <Button
+              {/* <Button
                 text={data.button?.fields.text}
                 variant="primaryGreen"
                 arrow={<LongArrowRightIcon />}
-              />
+              /> */}
               <Button
                 text={data.button_second?.fields.text}
                 onClick={() => setShowCollabPopup && setShowCollabPopup(true)}

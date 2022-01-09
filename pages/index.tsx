@@ -106,6 +106,7 @@ export async function getStaticProps() {
 
   const events = await fetchContentType('event');
   const navigationData = await fetchEntry('20WVzXIkln64XWMt29wnZS');
+
   let upcomingEvent;
 
   // Check if there is an upcoming event and assign to value: upcomingEvent

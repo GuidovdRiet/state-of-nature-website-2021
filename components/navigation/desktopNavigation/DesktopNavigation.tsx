@@ -12,6 +12,7 @@ import Button from '../../buttons/button/Button';
 
 // Style
 import * as S from './desktopNavigation.style';
+import { useRouter } from 'next/router';
 
 interface NavigationType {
   sys: {
@@ -32,6 +33,8 @@ interface NavigationType {
         };
       };
     };
+    ticketButtonLink: string;
+    ticketButtonText: string;
   };
 }
 
@@ -46,6 +49,8 @@ function Navigation({
   navigationData,
   forwardRef,
 }: NavigationProps) {
+  const router = useRouter();
+
   return (
     <S.Navigation ref={forwardRef}>
       <div className="navigation__wrapper">
@@ -89,11 +94,17 @@ function Navigation({
             </a>
           </div>
           {upcomingEvent ? (
-            <Button type="button" text="Tickets" />
+            <Button
+              type="button"
+              text={navigationData.fields.ticketButtonText}
+              onClick={() =>
+                router.push(navigationData.fields.ticketButtonLink)
+              }
+            />
           ) : (
             <Button
               type="button"
-              text="Newsletter"
+              text="Nieuwsbrief"
               onClick={() => window.open('https://eepurl.com/gLtD-T', '_blank')}
             />
           )}

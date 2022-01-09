@@ -19,7 +19,7 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   variant = 'primaryOrange',
   size = 'normal',
-  text = 'Read more',
+  text = 'Meer info',
   arrow,
   icon,
 }) => (
