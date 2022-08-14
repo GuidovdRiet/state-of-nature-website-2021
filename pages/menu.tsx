@@ -9,7 +9,6 @@ import workerSrc from '../pdf-worker';
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
 export default function PDFViewer() {
-  const [file, setFile] = useState('./files/menukaart-hx-hoogcruts-DEF.pdf');
   const [numPages, setNumPages] = useState(null);
 
   function onDocumentLoadSuccess({ numPages: nextNumPages }: any) {
@@ -26,7 +25,10 @@ export default function PDFViewer() {
             }
           `}
         />
-        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+        <Document
+          file="./files/menukaart-hx-hoogcruts-DEF.pdf"
+          onLoadSuccess={onDocumentLoadSuccess}
+        >
           {/* @ts-expect-error null accepted */}
           {Array.from({ length: numPages }, (_, index) => (
             <Page
