@@ -5,6 +5,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 // import pdf worker as a url, see `next.config.js` and `pdf-worker.js`
 // @ts-expect-error ts-migrate(2339)
 import workerSrc from '../pdf-worker';
+// eslint-disable: react/jsx-no-bind
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
