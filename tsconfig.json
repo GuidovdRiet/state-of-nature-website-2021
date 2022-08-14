@@ -35,5 +35,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+, "pdf-worker.js"  ]
 }
