@@ -15,7 +15,10 @@ function Menu() {
           }
         `}
       />
-      <iframe src="/files/menukaart-hx-hoogcruts-DEF.pdf" />
+      <iframe
+        src="/files/menukaart-hx-hoogcruts-DEF.pdf"
+        title="Menu kaart HX Hoogcruts"
+      />
     </>
   );
 }
