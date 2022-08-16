@@ -9,19 +9,19 @@ module.exports = {
       config.resolve.fallback.fs = false;
     }
 
-    // load worker files as a urls with `file-loader`
+    // load worker files as a urls by using Asset Modules
+    // https://webpack.js.org/guides/asset-modules/
     config.module.rules.unshift({
       test: /pdf\.worker\.(min\.)?js/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[contenthash].[ext]',
-            publicPath: '_next/static/worker',
-            outputPath: 'static/worker',
-          },
-        },
-      ],
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/worker/[hash][ext][query]',
+      },
+    });
+
+    config.module.rules.unshift({
+      test: /\.node$/,
+      loader: 'node-loader',
     });
 
     return config;
