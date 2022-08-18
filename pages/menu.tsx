@@ -27,11 +27,6 @@ export default function PDFViewer() {
             .react-pdf__Document {
               background-color: #f8f8f8;
             }
-
-            .react-pdf__Page {
-              display: flex;
-              justify-content: center;
-            }
           `}
         />
         <Document
