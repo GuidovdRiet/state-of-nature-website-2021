@@ -23,6 +23,15 @@ export default function PDFViewer() {
             body {
               margin: 0;
             }
+
+            .react-pdf__Document {
+              background-color: #f8f8f8;
+            }
+
+            .react-pdf__Page {
+              display: flex;
+              justify-content: center;
+            }
           `}
         />
         <Document
