@@ -1,15 +1,15 @@
-import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 
 // Types
 import { EventType } from '../../../types/EventType';
 
 // Components
-import InstagramIcon from '../../media/icons/socials/InstagramIcon';
-import FacebookIcon from '../../media/icons/socials/FacebookIcon';
 import Button from '../../buttons/button/Button';
+import FacebookIcon from '../../media/icons/socials/FacebookIcon';
+import InstagramIcon from '../../media/icons/socials/InstagramIcon';
 
 // Style
 import * as S from './navigation.style';

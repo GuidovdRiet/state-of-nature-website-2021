@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
 import NextHead from 'next/head';
+import { FC } from 'react';
 
 const defaultDescription =
-  "Connect to your very own 'State of Nature' and free your mind of obligations. Giving you a taste of Nature’s best tunes and flavors.";
+  'Krakende takken en pratsj op de benen. Het zit in de natuur van de mens om naar buiten te gaan en te genieten van bos, heuvel, fluitende vogels, zonneschijn en de wind die door de bomen waait. Dit is hetgeen dat het Heuvelland te bieden heeft en waarvan State of Nature denkt dat mensen dit te weinig ervaren.';
 const defaultOGURL = 'https://ourstateofnature.com/';
 const defaultOGImage = '/OG/SON-OG-default-image.jpg';
+const favicon = '/favicon.ico';
 
 interface HeadProps {
   title: string;
@@ -16,13 +17,14 @@ interface HeadProps {
 const Head: FC<HeadProps> = ({ title, url, description, ogImage }) => (
   <NextHead>
     <meta charSet="UTF-8" />
-    <title>{title || ''}</title>
+    <title>{`State of Nature - ${title}` || ''}</title>
     <meta name="description" content={description || defaultDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
-    <link rel="apple-touch-icon" href="/static/touch-icon.png" />
-    <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
-    <link rel="icon" href="/static/favicon.ico" />
+    <link rel="icon" href={favicon} />
+    <meta
+      name="keywords"
+      content="popup restaurant, restaurant, natuur, state of nature, Zuid-Limburg, HX Hoogcruts, dineren, Heuvelland"
+    />
     <meta property="og:url" content={url || defaultOGURL} />
     <meta property="og:title" content={title || ''} />
     <meta
